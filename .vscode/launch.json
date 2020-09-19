@@ -5,12 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Cortex Debug",
             "cwd": "${workspaceRoot}",
-            "executable": "./bin/executable.elf",
+            "executable": "./build/${workspaceRootFolderName}.elf",
+            "name": "Debug Microcontroller",
             "request": "launch",
             "type": "cortex-debug",
-            "servertype": "jlink"
+            "servertype": "openocd",
+            "configFiles": ["openocd.cfg"],
+            "preLaunchTask": "build"
         }
     ]
 }

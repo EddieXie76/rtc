@@ -1,0 +1,673 @@
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  20              		.align	2
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_GPIO_Init:
+  25              	.LFB68:
+  26              		.file 1 "Core/Src/main.c"
+   1:Core/Src/main.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/main.c **** /**
+   3:Core/Src/main.c ****   ******************************************************************************
+   4:Core/Src/main.c ****   * @file           : main.c
+   5:Core/Src/main.c ****   * @brief          : Main program body
+   6:Core/Src/main.c ****   ******************************************************************************
+   7:Core/Src/main.c ****   * @attention
+   8:Core/Src/main.c ****   *
+   9:Core/Src/main.c ****   * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  10:Core/Src/main.c ****   * All rights reserved.</center></h2>
+  11:Core/Src/main.c ****   *
+  12:Core/Src/main.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Core/Src/main.c ****   * the "License"; You may not use this file except in compliance with the
+  14:Core/Src/main.c ****   * License. You may obtain a copy of the License at:
+  15:Core/Src/main.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Core/Src/main.c ****   *
+  17:Core/Src/main.c ****   ******************************************************************************
+  18:Core/Src/main.c ****   */
+  19:Core/Src/main.c **** /* USER CODE END Header */
+  20:Core/Src/main.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/main.c **** #include "main.h"
+  22:Core/Src/main.c **** 
+  23:Core/Src/main.c **** /* Private includes ----------------------------------------------------------*/
+  24:Core/Src/main.c **** /* USER CODE BEGIN Includes */
+  25:Core/Src/main.c **** 
+  26:Core/Src/main.c **** /* USER CODE END Includes */
+  27:Core/Src/main.c **** 
+  28:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
+  29:Core/Src/main.c **** /* USER CODE BEGIN PTD */
+  30:Core/Src/main.c **** 
+  31:Core/Src/main.c **** /* USER CODE END PTD */
+  32:Core/Src/main.c **** 
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 2
+
+
+  33:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
+  34:Core/Src/main.c **** /* USER CODE BEGIN PD */
+  35:Core/Src/main.c **** /* USER CODE END PD */
+  36:Core/Src/main.c **** 
+  37:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
+  38:Core/Src/main.c **** /* USER CODE BEGIN PM */
+  39:Core/Src/main.c **** 
+  40:Core/Src/main.c **** /* USER CODE END PM */
+  41:Core/Src/main.c **** 
+  42:Core/Src/main.c **** /* Private variables ---------------------------------------------------------*/
+  43:Core/Src/main.c **** RTC_HandleTypeDef hrtc;
+  44:Core/Src/main.c **** 
+  45:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  46:Core/Src/main.c **** 
+  47:Core/Src/main.c **** /* USER CODE END PV */
+  48:Core/Src/main.c **** 
+  49:Core/Src/main.c **** /* Private function prototypes -----------------------------------------------*/
+  50:Core/Src/main.c **** void SystemClock_Config(void);
+  51:Core/Src/main.c **** static void MX_GPIO_Init(void);
+  52:Core/Src/main.c **** static void MX_RTC_Init(void);
+  53:Core/Src/main.c **** /* USER CODE BEGIN PFP */
+  54:Core/Src/main.c **** 
+  55:Core/Src/main.c **** /* USER CODE END PFP */
+  56:Core/Src/main.c **** 
+  57:Core/Src/main.c **** /* Private user code ---------------------------------------------------------*/
+  58:Core/Src/main.c **** /* USER CODE BEGIN 0 */
+  59:Core/Src/main.c **** 
+  60:Core/Src/main.c **** /* USER CODE END 0 */
+  61:Core/Src/main.c **** 
+  62:Core/Src/main.c **** /**
+  63:Core/Src/main.c ****   * @brief  The application entry point.
+  64:Core/Src/main.c ****   * @retval int
+  65:Core/Src/main.c ****   */
+  66:Core/Src/main.c **** int main(void)
+  67:Core/Src/main.c **** {
+  68:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+  69:Core/Src/main.c **** 
+  70:Core/Src/main.c ****   /* USER CODE END 1 */
+  71:Core/Src/main.c **** 
+  72:Core/Src/main.c ****   /* MCU Configuration--------------------------------------------------------*/
+  73:Core/Src/main.c **** 
+  74:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  75:Core/Src/main.c ****   HAL_Init();
+  76:Core/Src/main.c **** 
+  77:Core/Src/main.c ****   /* USER CODE BEGIN Init */
+  78:Core/Src/main.c **** 
+  79:Core/Src/main.c ****   /* USER CODE END Init */
+  80:Core/Src/main.c **** 
+  81:Core/Src/main.c ****   /* Configure the system clock */
+  82:Core/Src/main.c ****   SystemClock_Config();
+  83:Core/Src/main.c **** 
+  84:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
+  85:Core/Src/main.c **** 
+  86:Core/Src/main.c ****   /* USER CODE END SysInit */
+  87:Core/Src/main.c **** 
+  88:Core/Src/main.c ****   /* Initialize all configured peripherals */
+  89:Core/Src/main.c ****   MX_GPIO_Init();
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 3
+
+
+  90:Core/Src/main.c ****   MX_RTC_Init();
+  91:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+  92:Core/Src/main.c ****   RTC_TimeTypeDef time = {0};
+  93:Core/Src/main.c ****   RTC_DateTypeDef date = {0};
+  94:Core/Src/main.c ****   /* USER CODE END 2 */
+  95:Core/Src/main.c **** 
+  96:Core/Src/main.c ****   /* Infinite loop */
+  97:Core/Src/main.c ****   /* USER CODE BEGIN WHILE */
+  98:Core/Src/main.c ****   while (1)
+  99:Core/Src/main.c ****   {
+ 100:Core/Src/main.c ****     /* USER CODE END WHILE */
+ 101:Core/Src/main.c ****     HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
+ 102:Core/Src/main.c ****     HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 103:Core/Src/main.c ****     HAL_Delay(1000);
+ 104:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 105:Core/Src/main.c ****   }
+ 106:Core/Src/main.c ****   /* USER CODE END 3 */
+ 107:Core/Src/main.c **** }
+ 108:Core/Src/main.c **** 
+ 109:Core/Src/main.c **** /**
+ 110:Core/Src/main.c ****   * @brief System Clock Configuration
+ 111:Core/Src/main.c ****   * @retval None
+ 112:Core/Src/main.c ****   */
+ 113:Core/Src/main.c **** void SystemClock_Config(void)
+ 114:Core/Src/main.c **** {
+ 115:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 116:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 117:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+ 118:Core/Src/main.c **** 
+ 119:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
+ 120:Core/Src/main.c ****   * in the RCC_OscInitTypeDef structure.
+ 121:Core/Src/main.c ****   */
+ 122:Core/Src/main.c ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
+ 123:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 124:Core/Src/main.c ****   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
+ 125:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 126:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 127:Core/Src/main.c ****   {
+ 128:Core/Src/main.c ****     Error_Handler();
+ 129:Core/Src/main.c ****   }
+ 130:Core/Src/main.c ****   /** Initializes the CPU, AHB and APB buses clocks
+ 131:Core/Src/main.c ****   */
+ 132:Core/Src/main.c ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 133:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 134:Core/Src/main.c ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSE;
+ 135:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 136:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 137:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 138:Core/Src/main.c **** 
+ 139:Core/Src/main.c ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+ 140:Core/Src/main.c ****   {
+ 141:Core/Src/main.c ****     Error_Handler();
+ 142:Core/Src/main.c ****   }
+ 143:Core/Src/main.c ****   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+ 144:Core/Src/main.c ****   PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
+ 145:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 146:Core/Src/main.c ****   {
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 4
+
+
+ 147:Core/Src/main.c ****     Error_Handler();
+ 148:Core/Src/main.c ****   }
+ 149:Core/Src/main.c **** }
+ 150:Core/Src/main.c **** 
+ 151:Core/Src/main.c **** /**
+ 152:Core/Src/main.c ****   * @brief RTC Initialization Function
+ 153:Core/Src/main.c ****   * @param None
+ 154:Core/Src/main.c ****   * @retval None
+ 155:Core/Src/main.c ****   */
+ 156:Core/Src/main.c **** static void MX_RTC_Init(void)
+ 157:Core/Src/main.c **** {
+ 158:Core/Src/main.c **** 
+ 159:Core/Src/main.c ****   /* USER CODE BEGIN RTC_Init 0 */
+ 160:Core/Src/main.c **** 
+ 161:Core/Src/main.c ****   /* USER CODE END RTC_Init 0 */
+ 162:Core/Src/main.c **** 
+ 163:Core/Src/main.c ****   RTC_TimeTypeDef sTime = {0};
+ 164:Core/Src/main.c ****   RTC_DateTypeDef DateToUpdate = {0};
+ 165:Core/Src/main.c **** 
+ 166:Core/Src/main.c ****   /* USER CODE BEGIN RTC_Init 1 */
+ 167:Core/Src/main.c **** 
+ 168:Core/Src/main.c ****   /* USER CODE END RTC_Init 1 */
+ 169:Core/Src/main.c ****   /** Initialize RTC Only
+ 170:Core/Src/main.c ****   */
+ 171:Core/Src/main.c ****   hrtc.Instance = RTC;
+ 172:Core/Src/main.c ****   hrtc.Init.AsynchPrediv = RTC_AUTO_1_SECOND;
+ 173:Core/Src/main.c ****   hrtc.Init.OutPut = RTC_OUTPUTSOURCE_ALARM;
+ 174:Core/Src/main.c ****   if (HAL_RTC_Init(&hrtc) != HAL_OK)
+ 175:Core/Src/main.c ****   {
+ 176:Core/Src/main.c ****     Error_Handler();
+ 177:Core/Src/main.c ****   }
+ 178:Core/Src/main.c **** 
+ 179:Core/Src/main.c ****   /* USER CODE BEGIN Check_RTC_BKUP */
+ 180:Core/Src/main.c **** 
+ 181:Core/Src/main.c ****   /* USER CODE END Check_RTC_BKUP */
+ 182:Core/Src/main.c **** 
+ 183:Core/Src/main.c ****   /** Initialize RTC and set the Time and Date
+ 184:Core/Src/main.c ****   */
+ 185:Core/Src/main.c ****   sTime.Hours = 0x12;
+ 186:Core/Src/main.c ****   sTime.Minutes = 0x0;
+ 187:Core/Src/main.c ****   sTime.Seconds = 0x0;
+ 188:Core/Src/main.c **** 
+ 189:Core/Src/main.c ****   if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+ 190:Core/Src/main.c ****   {
+ 191:Core/Src/main.c ****     Error_Handler();
+ 192:Core/Src/main.c ****   }
+ 193:Core/Src/main.c ****   DateToUpdate.WeekDay = RTC_WEEKDAY_MONDAY;
+ 194:Core/Src/main.c ****   DateToUpdate.Month = RTC_MONTH_JANUARY;
+ 195:Core/Src/main.c ****   DateToUpdate.Date = 0x1;
+ 196:Core/Src/main.c ****   DateToUpdate.Year = 0x0;
+ 197:Core/Src/main.c **** 
+ 198:Core/Src/main.c ****   if (HAL_RTC_SetDate(&hrtc, &DateToUpdate, RTC_FORMAT_BCD) != HAL_OK)
+ 199:Core/Src/main.c ****   {
+ 200:Core/Src/main.c ****     Error_Handler();
+ 201:Core/Src/main.c ****   }
+ 202:Core/Src/main.c ****   /* USER CODE BEGIN RTC_Init 2 */
+ 203:Core/Src/main.c **** 
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 5
+
+
+ 204:Core/Src/main.c ****   /* USER CODE END RTC_Init 2 */
+ 205:Core/Src/main.c **** 
+ 206:Core/Src/main.c **** }
+ 207:Core/Src/main.c **** 
+ 208:Core/Src/main.c **** /**
+ 209:Core/Src/main.c ****   * @brief GPIO Initialization Function
+ 210:Core/Src/main.c ****   * @param None
+ 211:Core/Src/main.c ****   * @retval None
+ 212:Core/Src/main.c ****   */
+ 213:Core/Src/main.c **** static void MX_GPIO_Init(void)
+ 214:Core/Src/main.c **** {
+  27              		.loc 1 214 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 84B0     		sub	sp, sp, #16
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 16
+  35              	.LBB2:
+ 215:Core/Src/main.c **** 
+ 216:Core/Src/main.c ****   /* GPIO Ports Clock Enable */
+ 217:Core/Src/main.c ****   __HAL_RCC_GPIOC_CLK_ENABLE();
+  36              		.loc 1 217 0
+  37 0002 0F4B     		ldr	r3, .L3
+  38 0004 9A69     		ldr	r2, [r3, #24]
+  39 0006 42F01002 		orr	r2, r2, #16
+  40 000a 9A61     		str	r2, [r3, #24]
+  41 000c 9A69     		ldr	r2, [r3, #24]
+  42 000e 02F01002 		and	r2, r2, #16
+  43 0012 0192     		str	r2, [sp, #4]
+  44 0014 019A     		ldr	r2, [sp, #4]
+  45              	.LBE2:
+  46              	.LBB3:
+ 218:Core/Src/main.c ****   __HAL_RCC_GPIOD_CLK_ENABLE();
+  47              		.loc 1 218 0
+  48 0016 9A69     		ldr	r2, [r3, #24]
+  49 0018 42F02002 		orr	r2, r2, #32
+  50 001c 9A61     		str	r2, [r3, #24]
+  51 001e 9A69     		ldr	r2, [r3, #24]
+  52 0020 02F02002 		and	r2, r2, #32
+  53 0024 0292     		str	r2, [sp, #8]
+  54 0026 029A     		ldr	r2, [sp, #8]
+  55              	.LBE3:
+  56              	.LBB4:
+ 219:Core/Src/main.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
+  57              		.loc 1 219 0
+  58 0028 9A69     		ldr	r2, [r3, #24]
+  59 002a 42F00402 		orr	r2, r2, #4
+  60 002e 9A61     		str	r2, [r3, #24]
+  61 0030 9B69     		ldr	r3, [r3, #24]
+  62 0032 03F00403 		and	r3, r3, #4
+  63 0036 0393     		str	r3, [sp, #12]
+  64 0038 039B     		ldr	r3, [sp, #12]
+  65              	.LBE4:
+ 220:Core/Src/main.c **** 
+ 221:Core/Src/main.c **** }
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 6
+
+
+  66              		.loc 1 221 0
+  67 003a 04B0     		add	sp, sp, #16
+  68              	.LCFI1:
+  69              		.cfi_def_cfa_offset 0
+  70              		@ sp needed
+  71 003c 7047     		bx	lr
+  72              	.L4:
+  73 003e 00BF     		.align	2
+  74              	.L3:
+  75 0040 00100240 		.word	1073876992
+  76              		.cfi_endproc
+  77              	.LFE68:
+  79              		.section	.text.MX_RTC_Init,"ax",%progbits
+  80              		.align	2
+  81              		.thumb
+  82              		.thumb_func
+  84              	MX_RTC_Init:
+  85              	.LFB67:
+ 157:Core/Src/main.c **** 
+  86              		.loc 1 157 0
+  87              		.cfi_startproc
+  88              		@ args = 0, pretend = 0, frame = 8
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 30B5     		push	{r4, r5, lr}
+  91              	.LCFI2:
+  92              		.cfi_def_cfa_offset 12
+  93              		.cfi_offset 4, -12
+  94              		.cfi_offset 5, -8
+  95              		.cfi_offset 14, -4
+  96 0002 83B0     		sub	sp, sp, #12
+  97              	.LCFI3:
+  98              		.cfi_def_cfa_offset 24
+ 163:Core/Src/main.c ****   RTC_DateTypeDef DateToUpdate = {0};
+  99              		.loc 1 163 0
+ 100 0004 0025     		movs	r5, #0
+ 101 0006 ADF80450 		strh	r5, [sp, #4]	@ movhi
+ 102 000a 8DF80650 		strb	r5, [sp, #6]
+ 164:Core/Src/main.c **** 
+ 103              		.loc 1 164 0
+ 104 000e 0095     		str	r5, [sp]
+ 171:Core/Src/main.c ****   hrtc.Init.AsynchPrediv = RTC_AUTO_1_SECOND;
+ 105              		.loc 1 171 0
+ 106 0010 134C     		ldr	r4, .L7
+ 107 0012 144B     		ldr	r3, .L7+4
+ 108 0014 2360     		str	r3, [r4]
+ 172:Core/Src/main.c ****   hrtc.Init.OutPut = RTC_OUTPUTSOURCE_ALARM;
+ 109              		.loc 1 172 0
+ 110 0016 4FF0FF33 		mov	r3, #-1
+ 111 001a 6360     		str	r3, [r4, #4]
+ 173:Core/Src/main.c ****   if (HAL_RTC_Init(&hrtc) != HAL_OK)
+ 112              		.loc 1 173 0
+ 113 001c 4FF48073 		mov	r3, #256
+ 114 0020 A360     		str	r3, [r4, #8]
+ 174:Core/Src/main.c ****   {
+ 115              		.loc 1 174 0
+ 116 0022 2046     		mov	r0, r4
+ 117 0024 FFF7FEFF 		bl	HAL_RTC_Init
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 7
+
+
+ 118              	.LVL0:
+ 185:Core/Src/main.c ****   sTime.Minutes = 0x0;
+ 119              		.loc 1 185 0
+ 120 0028 1223     		movs	r3, #18
+ 121 002a 8DF80430 		strb	r3, [sp, #4]
+ 186:Core/Src/main.c ****   sTime.Seconds = 0x0;
+ 122              		.loc 1 186 0
+ 123 002e 8DF80550 		strb	r5, [sp, #5]
+ 187:Core/Src/main.c **** 
+ 124              		.loc 1 187 0
+ 125 0032 8DF80650 		strb	r5, [sp, #6]
+ 189:Core/Src/main.c ****   {
+ 126              		.loc 1 189 0
+ 127 0036 0122     		movs	r2, #1
+ 128 0038 01A9     		add	r1, sp, #4
+ 129 003a 2046     		mov	r0, r4
+ 130 003c FFF7FEFF 		bl	HAL_RTC_SetTime
+ 131              	.LVL1:
+ 193:Core/Src/main.c ****   DateToUpdate.Month = RTC_MONTH_JANUARY;
+ 132              		.loc 1 193 0
+ 133 0040 0122     		movs	r2, #1
+ 134 0042 8DF80020 		strb	r2, [sp]
+ 194:Core/Src/main.c ****   DateToUpdate.Date = 0x1;
+ 135              		.loc 1 194 0
+ 136 0046 8DF80120 		strb	r2, [sp, #1]
+ 195:Core/Src/main.c ****   DateToUpdate.Year = 0x0;
+ 137              		.loc 1 195 0
+ 138 004a 8DF80220 		strb	r2, [sp, #2]
+ 196:Core/Src/main.c **** 
+ 139              		.loc 1 196 0
+ 140 004e 8DF80350 		strb	r5, [sp, #3]
+ 198:Core/Src/main.c ****   {
+ 141              		.loc 1 198 0
+ 142 0052 6946     		mov	r1, sp
+ 143 0054 2046     		mov	r0, r4
+ 144 0056 FFF7FEFF 		bl	HAL_RTC_SetDate
+ 145              	.LVL2:
+ 206:Core/Src/main.c **** 
+ 146              		.loc 1 206 0
+ 147 005a 03B0     		add	sp, sp, #12
+ 148              	.LCFI4:
+ 149              		.cfi_def_cfa_offset 12
+ 150              		@ sp needed
+ 151 005c 30BD     		pop	{r4, r5, pc}
+ 152              	.L8:
+ 153 005e 00BF     		.align	2
+ 154              	.L7:
+ 155 0060 00000000 		.word	hrtc
+ 156 0064 00280040 		.word	1073752064
+ 157              		.cfi_endproc
+ 158              	.LFE67:
+ 160              		.section	.text.SystemClock_Config,"ax",%progbits
+ 161              		.align	2
+ 162              		.global	SystemClock_Config
+ 163              		.thumb
+ 164              		.thumb_func
+ 166              	SystemClock_Config:
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 8
+
+
+ 167              	.LFB66:
+ 114:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+ 168              		.loc 1 114 0
+ 169              		.cfi_startproc
+ 170              		@ args = 0, pretend = 0, frame = 88
+ 171              		@ frame_needed = 0, uses_anonymous_args = 0
+ 172 0000 30B5     		push	{r4, r5, lr}
+ 173              	.LCFI5:
+ 174              		.cfi_def_cfa_offset 12
+ 175              		.cfi_offset 4, -12
+ 176              		.cfi_offset 5, -8
+ 177              		.cfi_offset 14, -4
+ 178 0002 97B0     		sub	sp, sp, #92
+ 179              	.LCFI6:
+ 180              		.cfi_def_cfa_offset 104
+ 115:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+ 181              		.loc 1 115 0
+ 182 0004 2822     		movs	r2, #40
+ 183 0006 0021     		movs	r1, #0
+ 184 0008 0CA8     		add	r0, sp, #48
+ 185 000a FFF7FEFF 		bl	memset
+ 186              	.LVL3:
+ 116:Core/Src/main.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+ 187              		.loc 1 116 0
+ 188 000e 0024     		movs	r4, #0
+ 189 0010 0794     		str	r4, [sp, #28]
+ 190 0012 0894     		str	r4, [sp, #32]
+ 191 0014 0994     		str	r4, [sp, #36]
+ 192 0016 0A94     		str	r4, [sp, #40]
+ 193 0018 0B94     		str	r4, [sp, #44]
+ 117:Core/Src/main.c **** 
+ 194              		.loc 1 117 0
+ 195 001a 0194     		str	r4, [sp, #4]
+ 196 001c 0294     		str	r4, [sp, #8]
+ 197 001e 0394     		str	r4, [sp, #12]
+ 198 0020 0494     		str	r4, [sp, #16]
+ 199 0022 0594     		str	r4, [sp, #20]
+ 200 0024 0694     		str	r4, [sp, #24]
+ 122:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+ 201              		.loc 1 122 0
+ 202 0026 0523     		movs	r3, #5
+ 203 0028 0C93     		str	r3, [sp, #48]
+ 123:Core/Src/main.c ****   RCC_OscInitStruct.LSEState = RCC_LSE_ON;
+ 204              		.loc 1 123 0
+ 205 002a 4FF48033 		mov	r3, #65536
+ 206 002e 0D93     		str	r3, [sp, #52]
+ 124:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+ 207              		.loc 1 124 0
+ 208 0030 0125     		movs	r5, #1
+ 209 0032 0F95     		str	r5, [sp, #60]
+ 126:Core/Src/main.c ****   {
+ 210              		.loc 1 126 0
+ 211 0034 0CA8     		add	r0, sp, #48
+ 212 0036 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 213              	.LVL4:
+ 132:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 214              		.loc 1 132 0
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 9
+
+
+ 215 003a 0F23     		movs	r3, #15
+ 216 003c 0793     		str	r3, [sp, #28]
+ 134:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 217              		.loc 1 134 0
+ 218 003e 0895     		str	r5, [sp, #32]
+ 135:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+ 219              		.loc 1 135 0
+ 220 0040 0994     		str	r4, [sp, #36]
+ 136:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 221              		.loc 1 136 0
+ 222 0042 0A94     		str	r4, [sp, #40]
+ 137:Core/Src/main.c **** 
+ 223              		.loc 1 137 0
+ 224 0044 0B94     		str	r4, [sp, #44]
+ 139:Core/Src/main.c ****   {
+ 225              		.loc 1 139 0
+ 226 0046 2146     		mov	r1, r4
+ 227 0048 07A8     		add	r0, sp, #28
+ 228 004a FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 229              	.LVL5:
+ 143:Core/Src/main.c ****   PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSE;
+ 230              		.loc 1 143 0
+ 231 004e 0195     		str	r5, [sp, #4]
+ 144:Core/Src/main.c ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+ 232              		.loc 1 144 0
+ 233 0050 4FF48073 		mov	r3, #256
+ 234 0054 0293     		str	r3, [sp, #8]
+ 145:Core/Src/main.c ****   {
+ 235              		.loc 1 145 0
+ 236 0056 01A8     		add	r0, sp, #4
+ 237 0058 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 238              	.LVL6:
+ 149:Core/Src/main.c **** 
+ 239              		.loc 1 149 0
+ 240 005c 17B0     		add	sp, sp, #92
+ 241              	.LCFI7:
+ 242              		.cfi_def_cfa_offset 12
+ 243              		@ sp needed
+ 244 005e 30BD     		pop	{r4, r5, pc}
+ 245              		.cfi_endproc
+ 246              	.LFE66:
+ 248              		.section	.text.main,"ax",%progbits
+ 249              		.align	2
+ 250              		.global	main
+ 251              		.thumb
+ 252              		.thumb_func
+ 254              	main:
+ 255              	.LFB65:
+  67:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
+ 256              		.loc 1 67 0
+ 257              		.cfi_startproc
+ 258              		@ args = 0, pretend = 0, frame = 8
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 260 0000 10B5     		push	{r4, lr}
+ 261              	.LCFI8:
+ 262              		.cfi_def_cfa_offset 8
+ 263              		.cfi_offset 4, -8
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 10
+
+
+ 264              		.cfi_offset 14, -4
+ 265 0002 82B0     		sub	sp, sp, #8
+ 266              	.LCFI9:
+ 267              		.cfi_def_cfa_offset 16
+  75:Core/Src/main.c **** 
+ 268              		.loc 1 75 0
+ 269 0004 FFF7FEFF 		bl	HAL_Init
+ 270              	.LVL7:
+  82:Core/Src/main.c **** 
+ 271              		.loc 1 82 0
+ 272 0008 FFF7FEFF 		bl	SystemClock_Config
+ 273              	.LVL8:
+  89:Core/Src/main.c ****   MX_RTC_Init();
+ 274              		.loc 1 89 0
+ 275 000c FFF7FEFF 		bl	MX_GPIO_Init
+ 276              	.LVL9:
+  90:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
+ 277              		.loc 1 90 0
+ 278 0010 FFF7FEFF 		bl	MX_RTC_Init
+ 279              	.LVL10:
+  92:Core/Src/main.c ****   RTC_DateTypeDef date = {0};
+ 280              		.loc 1 92 0
+ 281 0014 0023     		movs	r3, #0
+ 282 0016 ADF80430 		strh	r3, [sp, #4]	@ movhi
+ 283 001a 8DF80630 		strb	r3, [sp, #6]
+  93:Core/Src/main.c ****   /* USER CODE END 2 */
+ 284              		.loc 1 93 0
+ 285 001e 0093     		str	r3, [sp]
+ 286              	.L12:
+ 101:Core/Src/main.c ****     HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+ 287              		.loc 1 101 0 discriminator 1
+ 288 0020 074C     		ldr	r4, .L14
+ 289 0022 0022     		movs	r2, #0
+ 290 0024 6946     		mov	r1, sp
+ 291 0026 2046     		mov	r0, r4
+ 292 0028 FFF7FEFF 		bl	HAL_RTC_GetDate
+ 293              	.LVL11:
+ 102:Core/Src/main.c ****     HAL_Delay(1000);
+ 294              		.loc 1 102 0 discriminator 1
+ 295 002c 0022     		movs	r2, #0
+ 296 002e 01A9     		add	r1, sp, #4
+ 297 0030 2046     		mov	r0, r4
+ 298 0032 FFF7FEFF 		bl	HAL_RTC_GetTime
+ 299              	.LVL12:
+ 103:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+ 300              		.loc 1 103 0 discriminator 1
+ 301 0036 4FF47A70 		mov	r0, #1000
+ 302 003a FFF7FEFF 		bl	HAL_Delay
+ 303              	.LVL13:
+ 304 003e EFE7     		b	.L12
+ 305              	.L15:
+ 306              		.align	2
+ 307              	.L14:
+ 308 0040 00000000 		.word	hrtc
+ 309              		.cfi_endproc
+ 310              	.LFE65:
+ 312              		.section	.text.Error_Handler,"ax",%progbits
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 11
+
+
+ 313              		.align	2
+ 314              		.global	Error_Handler
+ 315              		.thumb
+ 316              		.thumb_func
+ 318              	Error_Handler:
+ 319              	.LFB69:
+ 222:Core/Src/main.c **** 
+ 223:Core/Src/main.c **** /* USER CODE BEGIN 4 */
+ 224:Core/Src/main.c **** 
+ 225:Core/Src/main.c **** /* USER CODE END 4 */
+ 226:Core/Src/main.c **** 
+ 227:Core/Src/main.c **** /**
+ 228:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 229:Core/Src/main.c ****   * @retval None
+ 230:Core/Src/main.c ****   */
+ 231:Core/Src/main.c **** void Error_Handler(void)
+ 232:Core/Src/main.c **** {
+ 320              		.loc 1 232 0
+ 321              		.cfi_startproc
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324              		@ link register save eliminated.
+ 325 0000 7047     		bx	lr
+ 326              		.cfi_endproc
+ 327              	.LFE69:
+ 329              		.comm	hrtc,20,4
+ 330 0002 00BF     		.text
+ 331              	.Letext0:
+ 332              		.file 2 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 333              		.file 3 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 334              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h"
+ 335              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 336              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 337              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 338              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h"
+ 339              		.file 9 "Drivers/CMSIS/Include/core_cm3.h"
+ 340              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:20     .text.MX_GPIO_Init:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:75     .text.MX_GPIO_Init:00000040 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:80     .text.MX_RTC_Init:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:84     .text.MX_RTC_Init:00000000 MX_RTC_Init
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:155    .text.MX_RTC_Init:00000060 $d
+                            *COM*:00000014 hrtc
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:161    .text.SystemClock_Config:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:166    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:249    .text.main:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:254    .text.main:00000000 main
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:308    .text.main:00000040 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:313    .text.Error_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccyc9R2N.s:318    .text.Error_Handler:00000000 Error_Handler
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+HAL_RTC_Init
+HAL_RTC_SetTime
+HAL_RTC_SetDate
+memset
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_RCCEx_PeriphCLKConfig
+HAL_Init
+HAL_RTC_GetDate
+HAL_RTC_GetTime
+HAL_Delay

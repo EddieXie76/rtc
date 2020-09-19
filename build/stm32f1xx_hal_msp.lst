@@ -1,0 +1,343 @@
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"stm32f1xx_hal_msp.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.HAL_MspInit,"ax",%progbits
+  20              		.align	2
+  21              		.global	HAL_MspInit
+  22              		.thumb
+  23              		.thumb_func
+  25              	HAL_MspInit:
+  26              	.LFB65:
+  27              		.file 1 "Core/Src/stm32f1xx_hal_msp.c"
+   1:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/stm32f1xx_hal_msp.c **** /**
+   3:Core/Src/stm32f1xx_hal_msp.c ****   ******************************************************************************
+   4:Core/Src/stm32f1xx_hal_msp.c ****   * File Name          : stm32f1xx_hal_msp.c
+   5:Core/Src/stm32f1xx_hal_msp.c ****   * Description        : This file provides code for the MSP Initialization
+   6:Core/Src/stm32f1xx_hal_msp.c ****   *                      and de-Initialization codes.
+   7:Core/Src/stm32f1xx_hal_msp.c ****   ******************************************************************************
+   8:Core/Src/stm32f1xx_hal_msp.c ****   * @attention
+   9:Core/Src/stm32f1xx_hal_msp.c ****   *
+  10:Core/Src/stm32f1xx_hal_msp.c ****   * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  11:Core/Src/stm32f1xx_hal_msp.c ****   * All rights reserved.</center></h2>
+  12:Core/Src/stm32f1xx_hal_msp.c ****   *
+  13:Core/Src/stm32f1xx_hal_msp.c ****   * This software component is licensed by ST under BSD 3-Clause license,
+  14:Core/Src/stm32f1xx_hal_msp.c ****   * the "License"; You may not use this file except in compliance with the
+  15:Core/Src/stm32f1xx_hal_msp.c ****   * License. You may obtain a copy of the License at:
+  16:Core/Src/stm32f1xx_hal_msp.c ****   *                        opensource.org/licenses/BSD-3-Clause
+  17:Core/Src/stm32f1xx_hal_msp.c ****   *
+  18:Core/Src/stm32f1xx_hal_msp.c ****   ******************************************************************************
+  19:Core/Src/stm32f1xx_hal_msp.c ****   */
+  20:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END Header */
+  21:Core/Src/stm32f1xx_hal_msp.c **** 
+  22:Core/Src/stm32f1xx_hal_msp.c **** /* Includes ------------------------------------------------------------------*/
+  23:Core/Src/stm32f1xx_hal_msp.c **** #include "main.h"
+  24:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN Includes */
+  25:Core/Src/stm32f1xx_hal_msp.c **** 
+  26:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END Includes */
+  27:Core/Src/stm32f1xx_hal_msp.c **** 
+  28:Core/Src/stm32f1xx_hal_msp.c **** /* Private typedef -----------------------------------------------------------*/
+  29:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN TD */
+  30:Core/Src/stm32f1xx_hal_msp.c **** 
+  31:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END TD */
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 2
+
+
+  32:Core/Src/stm32f1xx_hal_msp.c **** 
+  33:Core/Src/stm32f1xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
+  34:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN Define */
+  35:Core/Src/stm32f1xx_hal_msp.c **** 
+  36:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END Define */
+  37:Core/Src/stm32f1xx_hal_msp.c **** 
+  38:Core/Src/stm32f1xx_hal_msp.c **** /* Private macro -------------------------------------------------------------*/
+  39:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN Macro */
+  40:Core/Src/stm32f1xx_hal_msp.c **** 
+  41:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END Macro */
+  42:Core/Src/stm32f1xx_hal_msp.c **** 
+  43:Core/Src/stm32f1xx_hal_msp.c **** /* Private variables ---------------------------------------------------------*/
+  44:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN PV */
+  45:Core/Src/stm32f1xx_hal_msp.c **** 
+  46:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END PV */
+  47:Core/Src/stm32f1xx_hal_msp.c **** 
+  48:Core/Src/stm32f1xx_hal_msp.c **** /* Private function prototypes -----------------------------------------------*/
+  49:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN PFP */
+  50:Core/Src/stm32f1xx_hal_msp.c **** 
+  51:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END PFP */
+  52:Core/Src/stm32f1xx_hal_msp.c **** 
+  53:Core/Src/stm32f1xx_hal_msp.c **** /* External functions --------------------------------------------------------*/
+  54:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN ExternalFunctions */
+  55:Core/Src/stm32f1xx_hal_msp.c **** 
+  56:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END ExternalFunctions */
+  57:Core/Src/stm32f1xx_hal_msp.c **** 
+  58:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE BEGIN 0 */
+  59:Core/Src/stm32f1xx_hal_msp.c **** 
+  60:Core/Src/stm32f1xx_hal_msp.c **** /* USER CODE END 0 */
+  61:Core/Src/stm32f1xx_hal_msp.c **** /**
+  62:Core/Src/stm32f1xx_hal_msp.c ****   * Initializes the Global MSP.
+  63:Core/Src/stm32f1xx_hal_msp.c ****   */
+  64:Core/Src/stm32f1xx_hal_msp.c **** void HAL_MspInit(void)
+  65:Core/Src/stm32f1xx_hal_msp.c **** {
+  28              		.loc 1 65 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 82B0     		sub	sp, sp, #8
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              	.LBB2:
+  66:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 0 */
+  67:Core/Src/stm32f1xx_hal_msp.c **** 
+  68:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END MspInit 0 */
+  69:Core/Src/stm32f1xx_hal_msp.c **** 
+  70:Core/Src/stm32f1xx_hal_msp.c ****   __HAL_RCC_AFIO_CLK_ENABLE();
+  37              		.loc 1 70 0
+  38 0002 0E4B     		ldr	r3, .L3
+  39 0004 9A69     		ldr	r2, [r3, #24]
+  40 0006 42F00102 		orr	r2, r2, #1
+  41 000a 9A61     		str	r2, [r3, #24]
+  42 000c 9A69     		ldr	r2, [r3, #24]
+  43 000e 02F00102 		and	r2, r2, #1
+  44 0012 0092     		str	r2, [sp]
+  45 0014 009A     		ldr	r2, [sp]
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 3
+
+
+  46              	.LBE2:
+  47              	.LBB3:
+  71:Core/Src/stm32f1xx_hal_msp.c ****   __HAL_RCC_PWR_CLK_ENABLE();
+  48              		.loc 1 71 0
+  49 0016 DA69     		ldr	r2, [r3, #28]
+  50 0018 42F08052 		orr	r2, r2, #268435456
+  51 001c DA61     		str	r2, [r3, #28]
+  52 001e DB69     		ldr	r3, [r3, #28]
+  53 0020 03F08053 		and	r3, r3, #268435456
+  54 0024 0193     		str	r3, [sp, #4]
+  55 0026 019B     		ldr	r3, [sp, #4]
+  56              	.LBE3:
+  57              	.LBB4:
+  72:Core/Src/stm32f1xx_hal_msp.c **** 
+  73:Core/Src/stm32f1xx_hal_msp.c ****   /* System interrupt init*/
+  74:Core/Src/stm32f1xx_hal_msp.c **** 
+  75:Core/Src/stm32f1xx_hal_msp.c ****   /** NOJTAG: JTAG-DP Disabled and SW-DP Enabled
+  76:Core/Src/stm32f1xx_hal_msp.c ****   */
+  77:Core/Src/stm32f1xx_hal_msp.c ****   __HAL_AFIO_REMAP_SWJ_NOJTAG();
+  58              		.loc 1 77 0
+  59 0028 054A     		ldr	r2, .L3+4
+  60 002a 5368     		ldr	r3, [r2, #4]
+  61              	.LVL0:
+  62 002c 23F0E063 		bic	r3, r3, #117440512
+  63              	.LVL1:
+  64 0030 43F00073 		orr	r3, r3, #33554432
+  65              	.LVL2:
+  66 0034 5360     		str	r3, [r2, #4]
+  67              	.LBE4:
+  78:Core/Src/stm32f1xx_hal_msp.c **** 
+  79:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 1 */
+  80:Core/Src/stm32f1xx_hal_msp.c **** 
+  81:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END MspInit 1 */
+  82:Core/Src/stm32f1xx_hal_msp.c **** }
+  68              		.loc 1 82 0
+  69 0036 02B0     		add	sp, sp, #8
+  70              	.LCFI1:
+  71              		.cfi_def_cfa_offset 0
+  72              		@ sp needed
+  73 0038 7047     		bx	lr
+  74              	.L4:
+  75 003a 00BF     		.align	2
+  76              	.L3:
+  77 003c 00100240 		.word	1073876992
+  78 0040 00000140 		.word	1073807360
+  79              		.cfi_endproc
+  80              	.LFE65:
+  82              		.section	.text.HAL_RTC_MspInit,"ax",%progbits
+  83              		.align	2
+  84              		.global	HAL_RTC_MspInit
+  85              		.thumb
+  86              		.thumb_func
+  88              	HAL_RTC_MspInit:
+  89              	.LFB66:
+  83:Core/Src/stm32f1xx_hal_msp.c **** 
+  84:Core/Src/stm32f1xx_hal_msp.c **** /**
+  85:Core/Src/stm32f1xx_hal_msp.c **** * @brief RTC MSP Initialization
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 4
+
+
+  86:Core/Src/stm32f1xx_hal_msp.c **** * This function configures the hardware resources used in this example
+  87:Core/Src/stm32f1xx_hal_msp.c **** * @param hrtc: RTC handle pointer
+  88:Core/Src/stm32f1xx_hal_msp.c **** * @retval None
+  89:Core/Src/stm32f1xx_hal_msp.c **** */
+  90:Core/Src/stm32f1xx_hal_msp.c **** void HAL_RTC_MspInit(RTC_HandleTypeDef* hrtc)
+  91:Core/Src/stm32f1xx_hal_msp.c **** {
+  90              		.loc 1 91 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 8
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              	.LVL3:
+  92:Core/Src/stm32f1xx_hal_msp.c ****   if(hrtc->Instance==RTC)
+  95              		.loc 1 92 0
+  96 0000 0268     		ldr	r2, [r0]
+  97 0002 0C4B     		ldr	r3, .L9
+  98 0004 9A42     		cmp	r2, r3
+  99 0006 13D1     		bne	.L8
+  91:Core/Src/stm32f1xx_hal_msp.c ****   if(hrtc->Instance==RTC)
+ 100              		.loc 1 91 0
+ 101 0008 00B5     		push	{lr}
+ 102              	.LCFI2:
+ 103              		.cfi_def_cfa_offset 4
+ 104              		.cfi_offset 14, -4
+ 105 000a 83B0     		sub	sp, sp, #12
+ 106              	.LCFI3:
+ 107              		.cfi_def_cfa_offset 16
+  93:Core/Src/stm32f1xx_hal_msp.c ****   {
+  94:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN RTC_MspInit 0 */
+  95:Core/Src/stm32f1xx_hal_msp.c **** 
+  96:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END RTC_MspInit 0 */
+  97:Core/Src/stm32f1xx_hal_msp.c ****     HAL_PWR_EnableBkUpAccess();
+ 108              		.loc 1 97 0
+ 109 000c FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
+ 110              	.LVL4:
+ 111              	.LBB5:
+  98:Core/Src/stm32f1xx_hal_msp.c ****     /* Enable BKP CLK enable for backup registers */
+  99:Core/Src/stm32f1xx_hal_msp.c ****     __HAL_RCC_BKP_CLK_ENABLE();
+ 112              		.loc 1 99 0
+ 113 0010 094B     		ldr	r3, .L9+4
+ 114 0012 DA69     		ldr	r2, [r3, #28]
+ 115 0014 42F00062 		orr	r2, r2, #134217728
+ 116 0018 DA61     		str	r2, [r3, #28]
+ 117 001a DB69     		ldr	r3, [r3, #28]
+ 118 001c 03F00063 		and	r3, r3, #134217728
+ 119 0020 0193     		str	r3, [sp, #4]
+ 120 0022 019B     		ldr	r3, [sp, #4]
+ 121              	.LBE5:
+ 100:Core/Src/stm32f1xx_hal_msp.c ****     /* Peripheral clock enable */
+ 101:Core/Src/stm32f1xx_hal_msp.c ****     __HAL_RCC_RTC_ENABLE();
+ 122              		.loc 1 101 0
+ 123 0024 0122     		movs	r2, #1
+ 124 0026 054B     		ldr	r3, .L9+8
+ 125 0028 1A60     		str	r2, [r3]
+ 102:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN RTC_MspInit 1 */
+ 103:Core/Src/stm32f1xx_hal_msp.c **** 
+ 104:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END RTC_MspInit 1 */
+ 105:Core/Src/stm32f1xx_hal_msp.c ****   }
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 5
+
+
+ 106:Core/Src/stm32f1xx_hal_msp.c **** 
+ 107:Core/Src/stm32f1xx_hal_msp.c **** }
+ 126              		.loc 1 107 0
+ 127 002a 03B0     		add	sp, sp, #12
+ 128              	.LCFI4:
+ 129              		.cfi_def_cfa_offset 4
+ 130              		@ sp needed
+ 131 002c 5DF804FB 		ldr	pc, [sp], #4
+ 132              	.LVL5:
+ 133              	.L8:
+ 134              	.LCFI5:
+ 135              		.cfi_def_cfa_offset 0
+ 136              		.cfi_restore 14
+ 137 0030 7047     		bx	lr
+ 138              	.L10:
+ 139 0032 00BF     		.align	2
+ 140              	.L9:
+ 141 0034 00280040 		.word	1073752064
+ 142 0038 00100240 		.word	1073876992
+ 143 003c 3C044242 		.word	1111622716
+ 144              		.cfi_endproc
+ 145              	.LFE66:
+ 147              		.section	.text.HAL_RTC_MspDeInit,"ax",%progbits
+ 148              		.align	2
+ 149              		.global	HAL_RTC_MspDeInit
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	HAL_RTC_MspDeInit:
+ 154              	.LFB67:
+ 108:Core/Src/stm32f1xx_hal_msp.c **** 
+ 109:Core/Src/stm32f1xx_hal_msp.c **** /**
+ 110:Core/Src/stm32f1xx_hal_msp.c **** * @brief RTC MSP De-Initialization
+ 111:Core/Src/stm32f1xx_hal_msp.c **** * This function freeze the hardware resources used in this example
+ 112:Core/Src/stm32f1xx_hal_msp.c **** * @param hrtc: RTC handle pointer
+ 113:Core/Src/stm32f1xx_hal_msp.c **** * @retval None
+ 114:Core/Src/stm32f1xx_hal_msp.c **** */
+ 115:Core/Src/stm32f1xx_hal_msp.c **** void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
+ 116:Core/Src/stm32f1xx_hal_msp.c **** {
+ 155              		.loc 1 116 0
+ 156              		.cfi_startproc
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159              		@ link register save eliminated.
+ 160              	.LVL6:
+ 117:Core/Src/stm32f1xx_hal_msp.c ****   if(hrtc->Instance==RTC)
+ 161              		.loc 1 117 0
+ 162 0000 0268     		ldr	r2, [r0]
+ 163 0002 034B     		ldr	r3, .L13
+ 164 0004 9A42     		cmp	r2, r3
+ 165 0006 02D1     		bne	.L11
+ 118:Core/Src/stm32f1xx_hal_msp.c ****   {
+ 119:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE BEGIN RTC_MspDeInit 0 */
+ 120:Core/Src/stm32f1xx_hal_msp.c **** 
+ 121:Core/Src/stm32f1xx_hal_msp.c ****   /* USER CODE END RTC_MspDeInit 0 */
+ 122:Core/Src/stm32f1xx_hal_msp.c ****     /* Peripheral clock disable */
+ 123:Core/Src/stm32f1xx_hal_msp.c ****     __HAL_RCC_RTC_DISABLE();
+ 166              		.loc 1 123 0
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 6
+
+
+ 167 0008 0022     		movs	r2, #0
+ 168 000a 024B     		ldr	r3, .L13+4
+ 169 000c 1A60     		str	r2, [r3]
+ 170              	.L11:
+ 171 000e 7047     		bx	lr
+ 172              	.L14:
+ 173              		.align	2
+ 174              	.L13:
+ 175 0010 00280040 		.word	1073752064
+ 176 0014 3C044242 		.word	1111622716
+ 177              		.cfi_endproc
+ 178              	.LFE67:
+ 180              		.text
+ 181              	.Letext0:
+ 182              		.file 2 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 183              		.file 3 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 184              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h"
+ 185              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h"
+ 186              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 187              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h"
+ 188              		.file 8 "Drivers/CMSIS/Include/core_cm3.h"
+ 189              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f1xx_hal_msp.c
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:20     .text.HAL_MspInit:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:77     .text.HAL_MspInit:0000003c $d
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:83     .text.HAL_RTC_MspInit:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:88     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:141    .text.HAL_RTC_MspInit:00000034 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:148    .text.HAL_RTC_MspDeInit:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:153    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+C:\Users\ADMINI~1\AppData\Local\Temp\cc6rropE.s:175    .text.HAL_RTC_MspDeInit:00000010 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+HAL_PWR_EnableBkUpAccess
