@@ -74,6 +74,10 @@ void Error_Handler(void);
 #define SEG3_CLK_GPIO_Port GPIOB
 #define SEG3_DIO_Pin GPIO_PIN_11
 #define SEG3_DIO_GPIO_Port GPIOB
+#define TIM3_SW_Pin GPIO_PIN_8
+#define TIM3_SW_GPIO_Port GPIOC
+#define TIM5_SW_Pin GPIO_PIN_9
+#define TIM5_SW_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

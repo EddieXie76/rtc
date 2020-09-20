@@ -29,11 +29,22 @@
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
 #include "string.h"
+#include "TM1637.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+enum RTC_MODE {
+  DISP_TIME = 0,
+  DISP_DATE,
+  MODIFY_SECOND,
+  MODIFY_MINUTE,
+  MODIFY_HOUR,
+  MODIFY_DATE,
+  MODIFY_MONTH,
+  MODIFY_YEAR,
+  CNT_RTC_MODE
+};
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -48,13 +59,46 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint8_t rtc_mode = 0;
+TM1637_InstDef tm1637 = {GPIOA, GPIO_PIN_6, GPIO_PIN_7, 6};
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void UpdateDisplay(uint8_t rtc_mode, RTC_DateTypeDef date, RTC_TimeTypeDef time){
+     int blink = (HAL_GetTick() / 200) % 2 > 0 ? 0xFF : 0;
+    char raw[6] = {0};
+    switch (rtc_mode)
+    {
+    case DISP_TIME:
+    case MODIFY_SECOND:
+    case MODIFY_MINUTE:
+    case MODIFY_HOUR:
+      raw[0] = rtc_mode != MODIFY_SECOND ? segmentMap[time.Seconds%10] : segmentMap[time.Seconds%10] & blink;
+      raw[1] = rtc_mode != MODIFY_SECOND ? segmentMap[time.Seconds/10] : segmentMap[time.Seconds/10] & blink;
+      raw[2] = rtc_mode != MODIFY_MINUTE ? segmentMap[time.Minutes%10] | (1<<7) : segmentMap[time.Minutes%10] & blink | (1<<7);
+      raw[3] = rtc_mode != MODIFY_MINUTE ? segmentMap[time.Minutes/10] : segmentMap[time.Minutes/10] & blink;
+      raw[4] = rtc_mode != MODIFY_HOUR ? segmentMap[time.Hours%10] | (1<<7) : segmentMap[time.Hours%10] & blink | (1<<7);
+      raw[5] = rtc_mode != MODIFY_HOUR ? segmentMap[time.Hours/10] : segmentMap[time.Hours/10] & blink;
+      break;
+    case DISP_DATE:
+    case MODIFY_DATE:
+    case MODIFY_MONTH:
+    case MODIFY_YEAR:
+      raw[0] = rtc_mode != MODIFY_DATE ? segmentMap[date.Date%10] : segmentMap[date.Date%10] & blink;
+      raw[1] = rtc_mode != MODIFY_DATE ? segmentMap[date.Date/10] : segmentMap[date.Date/10] & blink;
+      raw[2] = rtc_mode != MODIFY_MONTH ? segmentMap[date.Month%10] | (1<<7) : segmentMap[date.Month%10] & blink | (1<<7);
+      raw[3] = rtc_mode != MODIFY_MONTH ? segmentMap[date.Month/10] : segmentMap[date.Month/10] & blink;
+      raw[4] = rtc_mode != MODIFY_YEAR ? segmentMap[date.Year%10] : segmentMap[date.Year%10] & blink | (1<<7);
+      raw[5] = rtc_mode != MODIFY_YEAR ? segmentMap[date.Year/10] : segmentMap[date.Year/10] & blink;
+      break;
+    default:
+      break;
+    }
+    tm1637_DisplayRaw(&tm1637, raw, sizeof(raw));
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -100,8 +144,19 @@ int main(void)
   MX_ADC3_Init();
   /* USER CODE BEGIN 2 */
   RTC_First_Init(&hrtc);
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+
   RTC_TimeTypeDef time = {0};
   RTC_DateTypeDef date = {0};
+
+  tm1637_Init(&tm1637);
+
+  char str[16] = {0};
+
+  GPIO_PinState tim3_sw_last_state = HAL_GPIO_ReadPin(TIM3_SW_GPIO_Port, TIM3_SW_Pin);
+
+  int16_t enc_cnt_last = htim3.Instance->CNT;
+
   // USBD_CDC_Init();
   /* USER CODE END 2 */
 
@@ -112,13 +167,60 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    GPIO_PinState tim3_sw = HAL_GPIO_ReadPin(TIM3_SW_GPIO_Port, TIM3_SW_Pin);
+    if (tim3_sw != tim3_sw_last_state) {
+      if (tim3_sw == GPIO_PIN_SET)
+      {
+        htim3.Instance->CNT = 0;
+        enc_cnt_last = htim3.Instance->CNT;
+        rtc_mode++;
+        rtc_mode %= CNT_RTC_MODE;
+        sprintf(str, "rtc_mode = %d\r\n", rtc_mode);
+        CDC_Transmit_FS(str, strlen(str));
+      }
+      tim3_sw_last_state = tim3_sw;
+    }
+    
     HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
     HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
-    uint8_t str[16];
-    sprintf(str, "%02d-%02d-%02d %02d:%02d:%02d\r\n", 
-      date.Year, date.Month, date.Date, time.Hours, time.Minutes, time.Seconds);
-    CDC_Transmit_FS(str, strlen(str));
-    HAL_Delay(1000);
+
+    if (HAL_GetTick() % 100 == 0) {
+     
+    }
+
+    if (htim3.Instance->CNT != enc_cnt_last) {
+      sprintf(str, "TIM3 CNT = %d\r\n", (int16_t) htim3.Instance->CNT);
+      CDC_Transmit_FS(str, strlen(str));
+      switch (rtc_mode)
+      {
+      case MODIFY_SECOND:
+        time.Seconds = (time.Seconds + ((uint16_t)htim3.Instance->CNT)) % 60;
+        break;
+      case MODIFY_MINUTE:
+        time.Minutes = (time.Minutes + ((uint16_t)htim3.Instance->CNT)) % 60;
+        break;
+      case MODIFY_HOUR:
+        time.Hours = (time.Hours + ((uint16_t)htim3.Instance->CNT)) % 24;
+        break;
+      case MODIFY_DATE:
+        date.Date = (date.Date + ((uint16_t)htim3.Instance->CNT)) % 60;
+        break;
+      case MODIFY_MONTH:
+        date.Month = (date.Month + ((uint16_t)htim3.Instance->CNT)) % 60;
+        break;
+      case MODIFY_YEAR:
+        date.Year = (date.Year + ((uint16_t)htim3.Instance->CNT)) % 60;
+        break;
+      default:
+        break;
+      }
+      htim3.Instance->CNT = 0;
+      HAL_RTC_SetDate(&hrtc, &date, RTC_FORMAT_BIN);
+      HAL_RTC_SetTime(&hrtc, &time, RTC_FORMAT_BIN);
+      enc_cnt_last = htim3.Instance->CNT;
+    }
+    
+    UpdateDisplay(rtc_mode, date, time);
   }
   /* USER CODE END 3 */
 }
