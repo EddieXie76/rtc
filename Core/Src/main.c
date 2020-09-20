@@ -27,7 +27,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "usbd_cdc_if.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,7 +92,6 @@ int main(void)
   MX_GPIO_Init();
   MX_RTC_Init();
   MX_USB_DEVICE_Init();
-  MX_TIM2_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
@@ -102,6 +102,7 @@ int main(void)
   RTC_First_Init(&hrtc);
   RTC_TimeTypeDef time = {0};
   RTC_DateTypeDef date = {0};
+  // USBD_CDC_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,6 +114,11 @@ int main(void)
     /* USER CODE BEGIN 3 */
     HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
     HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
+    uint8_t str[16];
+    sprintf(str, "%02d-%02d-%02d %02d:%02d:%02d\r\n", 
+      date.Year, date.Month, date.Date, time.Hours, time.Minutes, time.Seconds);
+    CDC_Transmit_FS(str, strlen(str));
+    HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }

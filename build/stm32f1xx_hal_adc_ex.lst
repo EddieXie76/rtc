@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
   29:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   *
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   * the "License"; You may not use this file except in compliance with the
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 2
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 2
 
 
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   * License. You may obtain a copy of the License at:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
   86:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** /** @defgroup ADCEx_Exported_Functions ADCEx Exported Functions
   87:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   * @{
   88:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 3
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 3
 
 
   89:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
   43              	.LVL1:
  128:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
  129:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   uint32_t tickstart;
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 4
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 4
 
 
  130:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   __IO uint32_t wait_loop_index = 0U;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
   70 0034 1E68     		ldr	r6, [r3]
   71 0036 0220     		movs	r0, #2
   72              	.LVL3:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 5
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 5
 
 
   73 0038 FFF7FEFF 		bl	HAL_RCCEx_GetPeriphCLKFreq
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  108              	.LVL8:
  109              	.L7:
  175:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     {
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 6
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 6
 
 
  176:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       if((HAL_GetTick() - tickstart) > ADC_CALIBRATION_TIMEOUT)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  197:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     while(HAL_IS_BIT_SET(hadc->Instance->CR2, ADC_CR2_CAL))
  142              		.loc 1 197 0
  143 00a2 0FE0     		b	.L8
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 7
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 7
 
 
  144              	.LVL12:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  219:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* Process unlocked */
  220:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   __HAL_UNLOCK(hadc);
  176              		.loc 1 220 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 8
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 8
 
 
  177 00da 0023     		movs	r3, #0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  239:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* Process locked */
  240:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   __HAL_LOCK(hadc);
  214              		.loc 1 240 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 9
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 9
 
 
  215 0000 90F82430 		ldrb	r3, [r0, #36]	@ zero_extendqisi2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  251              	.L17:
  258:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     {
  259:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       CLEAR_BIT(hadc->State, HAL_ADC_STATE_MULTIMODE_SLAVE);
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 10
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 10
 
 
  252              		.loc 1 259 0 is_stmt 1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  289:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* If automatic injected conversion is enabled, conversion will start     */
  290:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* after next regular group conversion.                                   */
  291:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* Case of multimode enabled (for devices with several ADCs): if ADC is   */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 11
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 11
 
 
  292:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* slave, ADC is enabled only (conversion is not started). If ADC is      */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  300:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       }
  305              		.loc 1 300 0
  306 009c 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 12
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 12
 
 
  307              	.LVL20:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  357              		.thumb_func
  359              	HAL_ADCEx_InjectedStop:
  360              	.LFB67:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 13
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 13
 
 
  318:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  348:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****      HAL_IS_BIT_CLR(hadc->Instance->CR1, ADC_CR1_JAUTO)   )
  384              		.loc 1 348 0 discriminator 1
  385 001a 0368     		ldr	r3, [r0]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 14
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 14
 
 
  386 001c 5B68     		ldr	r3, [r3, #4]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  415 0048 0022     		movs	r2, #0
  416 004a 84F82420 		strb	r2, [r4, #36]
  373:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 15
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 15
 
 
  374:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* Return function status */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  387:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** 
  388:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* Variables for polling in case of scan mode enabled and polling for each  */
  389:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* conversion.                                                              */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 16
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 16
 
 
  390:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   __IO uint32_t Conversion_Timeout_CPU_cycles = 0U;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  479              		.loc 1 423 0
  480 0024 24B1     		cbz	r4, .L39
  481              		.loc 1 423 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 17
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 17
 
 
  482 0026 FFF7FEFF 		bl	HAL_GetTick
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  444:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****                                          * ADC_CONVCYCLES_MAX_RANGE(hadc)                 );
  515              		.loc 1 444 0
  516 005c 2B68     		ldr	r3, [r5]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 18
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 18
 
 
  517 005e 1969     		ldr	r1, [r3, #16]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  571 00b2 5427     		movs	r7, #84
  572 00b4 02E0     		b	.L44
  573              	.L54:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 19
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 19
 
 
  574 00b6 FC27     		movs	r7, #252
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  609 00e6 019B     		ldr	r3, [sp, #4]
  610 00e8 0133     		adds	r3, r3, #1
  611 00ea 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 20
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 20
 
 
  612              	.L46:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  645 0124 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
  479:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****      (ADC_IS_SOFTWARE_START_REGULAR(hadc)        &&
  646              		.loc 1 479 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 21
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 21
 
 
  647 0126 8BB9     		cbnz	r3, .L58
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  688 0160 92244912 		.word	306783378
  689 0164 92244900 		.word	4793490
  690 0168 49922400 		.word	2396745
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 22
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 22
 
 
  691              		.cfi_endproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  516:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   if (tmp_hal_status == HAL_OK)
  724              		.loc 1 516 0 discriminator 2
  725 0016 0346     		mov	r3, r0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 23
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 23
 
 
  726 0018 0028     		cmp	r0, #0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  756              		.loc 1 540 0
  757 0052 A26A     		ldr	r2, [r4, #40]
  758 0054 12F4807F 		tst	r2, #256
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 24
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 24
 
 
  759 0058 01D1     		bne	.L70
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  787 008c 8A42     		cmp	r2, r1
  788 008e 05D1     		bne	.L72
  567:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****           ADC_NONMULTIMODE_OR_MULTIMODEMASTER(hadc)  )
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 25
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 25
 
 
  789              		.loc 1 567 0 is_stmt 1 discriminator 2
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  820 00ba 10BD     		pop	{r4, pc}
  821              	.LVL54:
  822              	.L73:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 26
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 26
 
 
  823              	.LCFI12:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  861              		@ args = 0, pretend = 0, frame = 0
  862              		@ frame_needed = 0, uses_anonymous_args = 0
  863              	.LVL59:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 27
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 27
 
 
  603:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  893 002a 90B9     		cbnz	r0, .L81
  626:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     {
  627:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       /* Disable ADC end of conversion interrupt for injected channels */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 28
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 28
 
 
  628:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       __HAL_ADC_DISABLE_IT(hadc, ADC_IT_JEOC);
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  927              		.cfi_restore 4
  928              		.cfi_restore 14
  609:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 29
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 29
 
 
  929              		.loc 1 609 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  673:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   ADC_HandleTypeDef tmphadcSlave;
  674:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** 
  675:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* Check the parameters */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 30
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 30
 
 
  676:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   assert_param(IS_ADC_MULTIMODE_MASTER_INSTANCE(hadc->Instance));
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  699:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   
  700:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* Enable the ADC peripherals: master and slave (in case if not already     */
  701:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* enabled previously)                                                      */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 31
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 31
 
 
  702:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   tmp_hal_status = ADC_Enable(hadc);
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1025              	.L90:
  723:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     }
  724:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 32
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 32
 
 
  725:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* Process unlocked */
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  753:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     
  754:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* Start the DMA channel */
  755:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     HAL_DMA_Start_IT(hadc->DMA_Handle, (uint32_t)&hadc->Instance->DR, (uint32_t)pData, Length);
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 33
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 33
 
 
  1052              		.loc 1 755 0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1080 00ce 05E0     		b	.L86
  1081              	.L89:
  776:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   }
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 34
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 34
 
 
  1082              		.loc 1 776 0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1120              		.cfi_startproc
  1121              		@ args = 0, pretend = 0, frame = 48
  1122              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 35
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 35
 
 
  1123              	.LVL77:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1154              	.LVL80:
  820:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** 
  821:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     /* Check if ADC is effectively disabled */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 36
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 36
 
 
  822:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     if(tmp_hal_status != HAL_OK)
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  844:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     ADC_STATE_CLR_SET(hadc->State,
  1187              		.loc 1 844 0
  1188 0058 A26A     		ldr	r2, [r4, #40]
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 37
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 37
 
 
  1189 005a 22F48852 		bic	r2, r2, #4352
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1233              		.global	HAL_ADCEx_InjectedGetValue
  1234              		.thumb
  1235              		.thumb_func
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 38
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 38
 
 
  1237              	HAL_ADCEx_InjectedGetValue:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1251 000a 09D1     		bne	.L111
  1252 000c 05E0     		b	.L109
  1253              	.L108:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 39
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 39
 
 
  895:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   {  
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1290              		.thumb
  1291              		.thumb_func
  1293              	HAL_ADCEx_MultiModeGetValue:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 40
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 40
 
 
  1294              	.LFB74:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  946:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c **** }
  1316              		.loc 1 946 0
  1317 0016 7047     		bx	lr
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 41
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 41
 
 
  1318              	.L115:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  971:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****  ===============================================================================
  972:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****              ##### Peripheral Control functions #####
  973:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****  ===============================================================================  
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 42
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 42
 
 
  974:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     [..]  This section provides functions allowing to:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
 1007:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   assert_param(IS_ADC_RANGE(sConfigInjected->InjectedOffset));
 1008:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   
 1009:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   if(hadc->Init.ScanConvMode != ADC_SCAN_DISABLE)
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 43
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 43
 
 
 1010:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   {
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
 1037:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****                  ADC_JSQR_JSQ2 |
 1038:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****                  ADC_JSQR_JSQ1                                    ,
 1039:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****                  ADC_JSQR_RK_JL(sConfigInjected->InjectedChannel,
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 44
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 44
 
 
 1040:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****                                   ADC_INJECTED_RANK_1,
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  998:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   __IO uint32_t wait_loop_index = 0U;
  1430              		.loc 1 998 0
  1431 0072 0022     		movs	r2, #0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 45
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 45
 
 
  1432 0074 0EE0     		b	.L121
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1450 0094 0468     		ldr	r4, [r0]
  1451 0096 A368     		ldr	r3, [r4, #8]
  1452 0098 13F0010F 		tst	r3, #1
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 46
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 46
 
 
  1453 009c 11D1     		bne	.L123
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1488 00d8 6360     		str	r3, [r4, #4]
  1489 00da 04E0     		b	.L126
  1490              	.L127:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 47
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 47
 
 
 1117:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       }
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1521              	.LVL111:
  1522              	.L128:
 1141:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       }
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 48
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 48
 
 
 1142:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     }
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1556 0148 012B     		cmp	r3, #1
  1557 014a 04D8     		bhi	.L132
 1163:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       (sConfigInjected->InjectedChannel == ADC_CHANNEL_VREFINT)      )
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 49
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 49
 
 
 1164:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   {
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1592 018a 12E0     		b	.L137
  1593              	.L135:
 1184:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     case 3:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 50
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 50
 
 
 1185:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****       /* Set injected channel 3 offset */
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1624              		.loc 1 1208 0
  1625 01c2 9C68     		ldr	r4, [r3, #8]
  1626 01c4 14F4000F 		tst	r4, #8388608
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 51
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 51
 
 
  1627 01c8 1DD1     		bne	.L138
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1661              		.loc 1 1227 0
  1662 01fc 836A     		ldr	r3, [r0, #40]
  1663 01fe 43F02003 		orr	r3, r3, #32
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 52
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 52
 
 
  1664 0202 8362     		str	r3, [r0, #40]
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1707              		.align	2
  1708              		.global	HAL_ADCEx_MultiModeConfigChannel
  1709              		.thumb
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 53
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 53
 
 
  1710              		.thumb_func
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
 1277:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /*  - Multimode mode selection                                              */
 1278:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* To optimize code, all multimode settings can be set when both ADCs of    */
 1279:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   /* the common group are in state: disabled.                                 */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 54
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 54
 
 
 1280:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****   if ((ADC_IS_ENABLE(hadc) == RESET)                     &&
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1764 0040 8362     		str	r3, [r0, #40]
  1765              	.LVL120:
 1294:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 55
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 55
 
 
 1295:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c ****     tmp_hal_status = HAL_ERROR;
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1807              		.cfi_def_cfa_offset 0
  1808 005e 7047     		bx	lr
  1809              	.L156:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 56
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 56
 
 
  1810              		.align	2
@@ -3321,46 +3321,46 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 1
  1828              		.file 11 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
  1829              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
  1830              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s 			page 57
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s 			page 57
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_adc_ex.c
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:20     .text.HAL_ADCEx_Calibration_Start:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:25     .text.HAL_ADCEx_Calibration_Start:00000000 HAL_ADCEx_Calibration_Start
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:197    .text.HAL_ADCEx_Calibration_Start:000000ec $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:202    .text.HAL_ADCEx_InjectedStart:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:207    .text.HAL_ADCEx_InjectedStart:00000000 HAL_ADCEx_InjectedStart
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:349    .text.HAL_ADCEx_InjectedStart:000000bc $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:354    .text.HAL_ADCEx_InjectedStop:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:359    .text.HAL_ADCEx_InjectedStop:00000000 HAL_ADCEx_InjectedStop
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:434    .text.HAL_ADCEx_InjectedPollForConversion:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:439    .text.HAL_ADCEx_InjectedPollForConversion:00000000 HAL_ADCEx_InjectedPollForConversion
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:686    .text.HAL_ADCEx_InjectedPollForConversion:00000158 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:695    .text.HAL_ADCEx_InjectedStart_IT:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:700    .text.HAL_ADCEx_InjectedStart_IT:00000000 HAL_ADCEx_InjectedStart_IT
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:847    .text.HAL_ADCEx_InjectedStart_IT:000000c4 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:852    .text.HAL_ADCEx_InjectedStop_IT:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:857    .text.HAL_ADCEx_InjectedStop_IT:00000000 HAL_ADCEx_InjectedStop_IT
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:937    .text.HAL_ADCEx_MultiModeStart_DMA:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:942    .text.HAL_ADCEx_MultiModeStart_DMA:00000000 HAL_ADCEx_MultiModeStart_DMA
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1103   .text.HAL_ADCEx_MultiModeStart_DMA:000000e0 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1112   .text.HAL_ADCEx_MultiModeStop_DMA:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1117   .text.HAL_ADCEx_MultiModeStop_DMA:00000000 HAL_ADCEx_MultiModeStop_DMA
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1227   .text.HAL_ADCEx_MultiModeStop_DMA:0000007c $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1232   .text.HAL_ADCEx_InjectedGetValue:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1237   .text.HAL_ADCEx_InjectedGetValue:00000000 HAL_ADCEx_InjectedGetValue
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1288   .text.HAL_ADCEx_MultiModeGetValue:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1293   .text.HAL_ADCEx_MultiModeGetValue:00000000 HAL_ADCEx_MultiModeGetValue
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1321   .text.HAL_ADCEx_MultiModeGetValue:00000018 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1327   .text.HAL_ADCEx_InjectedConvCpltCallback:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1332   .text.HAL_ADCEx_InjectedConvCpltCallback:00000000 HAL_ADCEx_InjectedConvCpltCallback
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1345   .text.HAL_ADCEx_InjectedConfigChannel:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1350   .text.HAL_ADCEx_InjectedConfigChannel:00000000 HAL_ADCEx_InjectedConfigChannel
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1699   .text.HAL_ADCEx_InjectedConfigChannel:00000218 $d
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1707   .text.HAL_ADCEx_MultiModeConfigChannel:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1712   .text.HAL_ADCEx_MultiModeConfigChannel:00000000 HAL_ADCEx_MultiModeConfigChannel
-C:\Users\ADMINI~1\AppData\Local\Temp\ccIEBStA.s:1812   .text.HAL_ADCEx_MultiModeConfigChannel:00000060 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:20     .text.HAL_ADCEx_Calibration_Start:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:25     .text.HAL_ADCEx_Calibration_Start:00000000 HAL_ADCEx_Calibration_Start
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:197    .text.HAL_ADCEx_Calibration_Start:000000ec $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:202    .text.HAL_ADCEx_InjectedStart:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:207    .text.HAL_ADCEx_InjectedStart:00000000 HAL_ADCEx_InjectedStart
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:349    .text.HAL_ADCEx_InjectedStart:000000bc $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:354    .text.HAL_ADCEx_InjectedStop:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:359    .text.HAL_ADCEx_InjectedStop:00000000 HAL_ADCEx_InjectedStop
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:434    .text.HAL_ADCEx_InjectedPollForConversion:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:439    .text.HAL_ADCEx_InjectedPollForConversion:00000000 HAL_ADCEx_InjectedPollForConversion
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:686    .text.HAL_ADCEx_InjectedPollForConversion:00000158 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:695    .text.HAL_ADCEx_InjectedStart_IT:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:700    .text.HAL_ADCEx_InjectedStart_IT:00000000 HAL_ADCEx_InjectedStart_IT
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:847    .text.HAL_ADCEx_InjectedStart_IT:000000c4 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:852    .text.HAL_ADCEx_InjectedStop_IT:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:857    .text.HAL_ADCEx_InjectedStop_IT:00000000 HAL_ADCEx_InjectedStop_IT
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:937    .text.HAL_ADCEx_MultiModeStart_DMA:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:942    .text.HAL_ADCEx_MultiModeStart_DMA:00000000 HAL_ADCEx_MultiModeStart_DMA
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1103   .text.HAL_ADCEx_MultiModeStart_DMA:000000e0 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1112   .text.HAL_ADCEx_MultiModeStop_DMA:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1117   .text.HAL_ADCEx_MultiModeStop_DMA:00000000 HAL_ADCEx_MultiModeStop_DMA
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1227   .text.HAL_ADCEx_MultiModeStop_DMA:0000007c $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1232   .text.HAL_ADCEx_InjectedGetValue:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1237   .text.HAL_ADCEx_InjectedGetValue:00000000 HAL_ADCEx_InjectedGetValue
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1288   .text.HAL_ADCEx_MultiModeGetValue:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1293   .text.HAL_ADCEx_MultiModeGetValue:00000000 HAL_ADCEx_MultiModeGetValue
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1321   .text.HAL_ADCEx_MultiModeGetValue:00000018 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1327   .text.HAL_ADCEx_InjectedConvCpltCallback:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1332   .text.HAL_ADCEx_InjectedConvCpltCallback:00000000 HAL_ADCEx_InjectedConvCpltCallback
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1345   .text.HAL_ADCEx_InjectedConfigChannel:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1350   .text.HAL_ADCEx_InjectedConfigChannel:00000000 HAL_ADCEx_InjectedConfigChannel
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1699   .text.HAL_ADCEx_InjectedConfigChannel:00000218 $d
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1707   .text.HAL_ADCEx_MultiModeConfigChannel:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1712   .text.HAL_ADCEx_MultiModeConfigChannel:00000000 HAL_ADCEx_MultiModeConfigChannel
+C:\Users\ADMINI~1\AppData\Local\Temp\ccjqIxKb.s:1812   .text.HAL_ADCEx_MultiModeConfigChannel:00000060 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
