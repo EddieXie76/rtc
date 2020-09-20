@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
   29:Core/Src/stm32f1xx_it.c **** /* USER CODE BEGIN TD */
   30:Core/Src/stm32f1xx_it.c **** 
   31:Core/Src/stm32f1xx_it.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 2
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 2
 
 
   32:Core/Src/stm32f1xx_it.c **** 
@@ -88,20 +88,21 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
   56:Core/Src/stm32f1xx_it.c **** /* USER CODE END 0 */
   57:Core/Src/stm32f1xx_it.c **** 
   58:Core/Src/stm32f1xx_it.c **** /* External variables --------------------------------------------------------*/
-  59:Core/Src/stm32f1xx_it.c **** 
-  60:Core/Src/stm32f1xx_it.c **** /* USER CODE BEGIN EV */
-  61:Core/Src/stm32f1xx_it.c **** 
-  62:Core/Src/stm32f1xx_it.c **** /* USER CODE END EV */
-  63:Core/Src/stm32f1xx_it.c **** 
-  64:Core/Src/stm32f1xx_it.c **** /******************************************************************************/
-  65:Core/Src/stm32f1xx_it.c **** /*           Cortex-M3 Processor Interruption and Exception Handlers          */
-  66:Core/Src/stm32f1xx_it.c **** /******************************************************************************/
-  67:Core/Src/stm32f1xx_it.c **** /**
-  68:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Non maskable interrupt.
-  69:Core/Src/stm32f1xx_it.c ****   */
-  70:Core/Src/stm32f1xx_it.c **** void NMI_Handler(void)
-  71:Core/Src/stm32f1xx_it.c **** {
-  28              		.loc 1 71 0
+  59:Core/Src/stm32f1xx_it.c **** extern PCD_HandleTypeDef hpcd_USB_FS;
+  60:Core/Src/stm32f1xx_it.c **** extern RTC_HandleTypeDef hrtc;
+  61:Core/Src/stm32f1xx_it.c **** /* USER CODE BEGIN EV */
+  62:Core/Src/stm32f1xx_it.c **** 
+  63:Core/Src/stm32f1xx_it.c **** /* USER CODE END EV */
+  64:Core/Src/stm32f1xx_it.c **** 
+  65:Core/Src/stm32f1xx_it.c **** /******************************************************************************/
+  66:Core/Src/stm32f1xx_it.c **** /*           Cortex-M3 Processor Interruption and Exception Handlers          */
+  67:Core/Src/stm32f1xx_it.c **** /******************************************************************************/
+  68:Core/Src/stm32f1xx_it.c **** /**
+  69:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Non maskable interrupt.
+  70:Core/Src/stm32f1xx_it.c ****   */
+  71:Core/Src/stm32f1xx_it.c **** void NMI_Handler(void)
+  72:Core/Src/stm32f1xx_it.c **** {
+  28              		.loc 1 72 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -116,23 +117,23 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
   41              		.thumb_func
   43              	HardFault_Handler:
   44              	.LFB66:
-  72:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
-  73:Core/Src/stm32f1xx_it.c **** 
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 3
+  73:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 3
 
 
-  74:Core/Src/stm32f1xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
-  75:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
-  76:Core/Src/stm32f1xx_it.c **** 
-  77:Core/Src/stm32f1xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
-  78:Core/Src/stm32f1xx_it.c **** }
-  79:Core/Src/stm32f1xx_it.c **** 
-  80:Core/Src/stm32f1xx_it.c **** /**
-  81:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Hard fault interrupt.
-  82:Core/Src/stm32f1xx_it.c ****   */
-  83:Core/Src/stm32f1xx_it.c **** void HardFault_Handler(void)
-  84:Core/Src/stm32f1xx_it.c **** {
-  45              		.loc 1 84 0
+  74:Core/Src/stm32f1xx_it.c **** 
+  75:Core/Src/stm32f1xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
+  76:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
+  77:Core/Src/stm32f1xx_it.c **** 
+  78:Core/Src/stm32f1xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 1 */
+  79:Core/Src/stm32f1xx_it.c **** }
+  80:Core/Src/stm32f1xx_it.c **** 
+  81:Core/Src/stm32f1xx_it.c **** /**
+  82:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Hard fault interrupt.
+  83:Core/Src/stm32f1xx_it.c ****   */
+  84:Core/Src/stm32f1xx_it.c **** void HardFault_Handler(void)
+  85:Core/Src/stm32f1xx_it.c **** {
+  45              		.loc 1 85 0
   46              		.cfi_startproc
   47              		@ Volatile: function does not return.
   48              		@ args = 0, pretend = 0, frame = 0
@@ -149,22 +150,22 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
   60              		.thumb_func
   62              	MemManage_Handler:
   63              	.LFB67:
-  85:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
-  86:Core/Src/stm32f1xx_it.c **** 
-  87:Core/Src/stm32f1xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
-  88:Core/Src/stm32f1xx_it.c ****   while (1)
-  89:Core/Src/stm32f1xx_it.c ****   {
-  90:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-  91:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_HardFault_IRQn 0 */
-  92:Core/Src/stm32f1xx_it.c ****   }
-  93:Core/Src/stm32f1xx_it.c **** }
-  94:Core/Src/stm32f1xx_it.c **** 
-  95:Core/Src/stm32f1xx_it.c **** /**
-  96:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Memory management fault.
-  97:Core/Src/stm32f1xx_it.c ****   */
-  98:Core/Src/stm32f1xx_it.c **** void MemManage_Handler(void)
-  99:Core/Src/stm32f1xx_it.c **** {
-  64              		.loc 1 99 0
+  86:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN HardFault_IRQn 0 */
+  87:Core/Src/stm32f1xx_it.c **** 
+  88:Core/Src/stm32f1xx_it.c ****   /* USER CODE END HardFault_IRQn 0 */
+  89:Core/Src/stm32f1xx_it.c ****   while (1)
+  90:Core/Src/stm32f1xx_it.c ****   {
+  91:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+  92:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_HardFault_IRQn 0 */
+  93:Core/Src/stm32f1xx_it.c ****   }
+  94:Core/Src/stm32f1xx_it.c **** }
+  95:Core/Src/stm32f1xx_it.c **** 
+  96:Core/Src/stm32f1xx_it.c **** /**
+  97:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Memory management fault.
+  98:Core/Src/stm32f1xx_it.c ****   */
+  99:Core/Src/stm32f1xx_it.c **** void MemManage_Handler(void)
+ 100:Core/Src/stm32f1xx_it.c **** {
+  64              		.loc 1 100 0
   65              		.cfi_startproc
   66              		@ Volatile: function does not return.
   67              		@ args = 0, pretend = 0, frame = 0
@@ -177,29 +178,29 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
   75 0002 00BF     		.section	.text.BusFault_Handler,"ax",%progbits
   76              		.align	2
   77              		.global	BusFault_Handler
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 4
+
+
   78              		.thumb
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 4
-
-
   79              		.thumb_func
   81              	BusFault_Handler:
   82              	.LFB68:
- 100:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
- 101:Core/Src/stm32f1xx_it.c **** 
- 102:Core/Src/stm32f1xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
- 103:Core/Src/stm32f1xx_it.c ****   while (1)
- 104:Core/Src/stm32f1xx_it.c ****   {
- 105:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
- 106:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_MemoryManagement_IRQn 0 */
- 107:Core/Src/stm32f1xx_it.c ****   }
- 108:Core/Src/stm32f1xx_it.c **** }
- 109:Core/Src/stm32f1xx_it.c **** 
- 110:Core/Src/stm32f1xx_it.c **** /**
- 111:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Prefetch fault, memory access fault.
- 112:Core/Src/stm32f1xx_it.c ****   */
- 113:Core/Src/stm32f1xx_it.c **** void BusFault_Handler(void)
- 114:Core/Src/stm32f1xx_it.c **** {
-  83              		.loc 1 114 0
+ 101:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN MemoryManagement_IRQn 0 */
+ 102:Core/Src/stm32f1xx_it.c **** 
+ 103:Core/Src/stm32f1xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
+ 104:Core/Src/stm32f1xx_it.c ****   while (1)
+ 105:Core/Src/stm32f1xx_it.c ****   {
+ 106:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_MemoryManagement_IRQn 0 */
+ 107:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_MemoryManagement_IRQn 0 */
+ 108:Core/Src/stm32f1xx_it.c ****   }
+ 109:Core/Src/stm32f1xx_it.c **** }
+ 110:Core/Src/stm32f1xx_it.c **** 
+ 111:Core/Src/stm32f1xx_it.c **** /**
+ 112:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Prefetch fault, memory access fault.
+ 113:Core/Src/stm32f1xx_it.c ****   */
+ 114:Core/Src/stm32f1xx_it.c **** void BusFault_Handler(void)
+ 115:Core/Src/stm32f1xx_it.c **** {
+  83              		.loc 1 115 0
   84              		.cfi_startproc
   85              		@ Volatile: function does not return.
   86              		@ args = 0, pretend = 0, frame = 0
@@ -216,31 +217,31 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
   98              		.thumb_func
  100              	UsageFault_Handler:
  101              	.LFB69:
- 115:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
- 116:Core/Src/stm32f1xx_it.c **** 
- 117:Core/Src/stm32f1xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
- 118:Core/Src/stm32f1xx_it.c ****   while (1)
- 119:Core/Src/stm32f1xx_it.c ****   {
- 120:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
- 121:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
- 122:Core/Src/stm32f1xx_it.c ****   }
- 123:Core/Src/stm32f1xx_it.c **** }
- 124:Core/Src/stm32f1xx_it.c **** 
- 125:Core/Src/stm32f1xx_it.c **** /**
- 126:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Undefined instruction or illegal state.
- 127:Core/Src/stm32f1xx_it.c ****   */
- 128:Core/Src/stm32f1xx_it.c **** void UsageFault_Handler(void)
- 129:Core/Src/stm32f1xx_it.c **** {
- 102              		.loc 1 129 0
+ 116:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN BusFault_IRQn 0 */
+ 117:Core/Src/stm32f1xx_it.c **** 
+ 118:Core/Src/stm32f1xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
+ 119:Core/Src/stm32f1xx_it.c ****   while (1)
+ 120:Core/Src/stm32f1xx_it.c ****   {
+ 121:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
+ 122:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_BusFault_IRQn 0 */
+ 123:Core/Src/stm32f1xx_it.c ****   }
+ 124:Core/Src/stm32f1xx_it.c **** }
+ 125:Core/Src/stm32f1xx_it.c **** 
+ 126:Core/Src/stm32f1xx_it.c **** /**
+ 127:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Undefined instruction or illegal state.
+ 128:Core/Src/stm32f1xx_it.c ****   */
+ 129:Core/Src/stm32f1xx_it.c **** void UsageFault_Handler(void)
+ 130:Core/Src/stm32f1xx_it.c **** {
+ 102              		.loc 1 130 0
  103              		.cfi_startproc
  104              		@ Volatile: function does not return.
  105              		@ args = 0, pretend = 0, frame = 0
  106              		@ frame_needed = 0, uses_anonymous_args = 0
  107              		@ link register save eliminated.
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 5
+
+
  108              	.L9:
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 5
-
-
  109 0000 FEE7     		b	.L9
  110              		.cfi_endproc
  111              	.LFE69:
@@ -251,22 +252,22 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
  117              		.thumb_func
  119              	SVC_Handler:
  120              	.LFB70:
- 130:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN UsageFault_IRQn 0 */
- 131:Core/Src/stm32f1xx_it.c **** 
- 132:Core/Src/stm32f1xx_it.c ****   /* USER CODE END UsageFault_IRQn 0 */
- 133:Core/Src/stm32f1xx_it.c ****   while (1)
- 134:Core/Src/stm32f1xx_it.c ****   {
- 135:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
- 136:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_UsageFault_IRQn 0 */
- 137:Core/Src/stm32f1xx_it.c ****   }
- 138:Core/Src/stm32f1xx_it.c **** }
- 139:Core/Src/stm32f1xx_it.c **** 
- 140:Core/Src/stm32f1xx_it.c **** /**
- 141:Core/Src/stm32f1xx_it.c ****   * @brief This function handles System service call via SWI instruction.
- 142:Core/Src/stm32f1xx_it.c ****   */
- 143:Core/Src/stm32f1xx_it.c **** void SVC_Handler(void)
- 144:Core/Src/stm32f1xx_it.c **** {
- 121              		.loc 1 144 0
+ 131:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN UsageFault_IRQn 0 */
+ 132:Core/Src/stm32f1xx_it.c **** 
+ 133:Core/Src/stm32f1xx_it.c ****   /* USER CODE END UsageFault_IRQn 0 */
+ 134:Core/Src/stm32f1xx_it.c ****   while (1)
+ 135:Core/Src/stm32f1xx_it.c ****   {
+ 136:Core/Src/stm32f1xx_it.c ****     /* USER CODE BEGIN W1_UsageFault_IRQn 0 */
+ 137:Core/Src/stm32f1xx_it.c ****     /* USER CODE END W1_UsageFault_IRQn 0 */
+ 138:Core/Src/stm32f1xx_it.c ****   }
+ 139:Core/Src/stm32f1xx_it.c **** }
+ 140:Core/Src/stm32f1xx_it.c **** 
+ 141:Core/Src/stm32f1xx_it.c **** /**
+ 142:Core/Src/stm32f1xx_it.c ****   * @brief This function handles System service call via SWI instruction.
+ 143:Core/Src/stm32f1xx_it.c ****   */
+ 144:Core/Src/stm32f1xx_it.c **** void SVC_Handler(void)
+ 145:Core/Src/stm32f1xx_it.c **** {
+ 121              		.loc 1 145 0
  122              		.cfi_startproc
  123              		@ args = 0, pretend = 0, frame = 0
  124              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -281,26 +282,26 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
  134              		.thumb_func
  136              	DebugMon_Handler:
  137              	.LFB71:
- 145:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 0 */
- 146:Core/Src/stm32f1xx_it.c **** 
- 147:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SVCall_IRQn 0 */
- 148:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 1 */
- 149:Core/Src/stm32f1xx_it.c **** 
- 150:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SVCall_IRQn 1 */
- 151:Core/Src/stm32f1xx_it.c **** }
- 152:Core/Src/stm32f1xx_it.c **** 
- 153:Core/Src/stm32f1xx_it.c **** /**
- 154:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Debug monitor.
- 155:Core/Src/stm32f1xx_it.c ****   */
- 156:Core/Src/stm32f1xx_it.c **** void DebugMon_Handler(void)
- 157:Core/Src/stm32f1xx_it.c **** {
- 138              		.loc 1 157 0
+ 146:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 0 */
+ 147:Core/Src/stm32f1xx_it.c **** 
+ 148:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SVCall_IRQn 0 */
+ 149:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SVCall_IRQn 1 */
+ 150:Core/Src/stm32f1xx_it.c **** 
+ 151:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SVCall_IRQn 1 */
+ 152:Core/Src/stm32f1xx_it.c **** }
+ 153:Core/Src/stm32f1xx_it.c **** 
+ 154:Core/Src/stm32f1xx_it.c **** /**
+ 155:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Debug monitor.
+ 156:Core/Src/stm32f1xx_it.c ****   */
+ 157:Core/Src/stm32f1xx_it.c **** void DebugMon_Handler(void)
+ 158:Core/Src/stm32f1xx_it.c **** {
+ 138              		.loc 1 158 0
  139              		.cfi_startproc
  140              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 6
+
+
  141              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 6
-
-
  142              		@ link register save eliminated.
  143 0000 7047     		bx	lr
  144              		.cfi_endproc
@@ -312,20 +313,20 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
  151              		.thumb_func
  153              	PendSV_Handler:
  154              	.LFB72:
- 158:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
- 159:Core/Src/stm32f1xx_it.c **** 
- 160:Core/Src/stm32f1xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 0 */
- 161:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
- 162:Core/Src/stm32f1xx_it.c **** 
- 163:Core/Src/stm32f1xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 1 */
- 164:Core/Src/stm32f1xx_it.c **** }
- 165:Core/Src/stm32f1xx_it.c **** 
- 166:Core/Src/stm32f1xx_it.c **** /**
- 167:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Pendable request for system service.
- 168:Core/Src/stm32f1xx_it.c ****   */
- 169:Core/Src/stm32f1xx_it.c **** void PendSV_Handler(void)
- 170:Core/Src/stm32f1xx_it.c **** {
- 155              		.loc 1 170 0
+ 159:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 0 */
+ 160:Core/Src/stm32f1xx_it.c **** 
+ 161:Core/Src/stm32f1xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 0 */
+ 162:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN DebugMonitor_IRQn 1 */
+ 163:Core/Src/stm32f1xx_it.c **** 
+ 164:Core/Src/stm32f1xx_it.c ****   /* USER CODE END DebugMonitor_IRQn 1 */
+ 165:Core/Src/stm32f1xx_it.c **** }
+ 166:Core/Src/stm32f1xx_it.c **** 
+ 167:Core/Src/stm32f1xx_it.c **** /**
+ 168:Core/Src/stm32f1xx_it.c ****   * @brief This function handles Pendable request for system service.
+ 169:Core/Src/stm32f1xx_it.c ****   */
+ 170:Core/Src/stm32f1xx_it.c **** void PendSV_Handler(void)
+ 171:Core/Src/stm32f1xx_it.c **** {
+ 155              		.loc 1 171 0
  156              		.cfi_startproc
  157              		@ args = 0, pretend = 0, frame = 0
  158              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -340,72 +341,183 @@ ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 1
  168              		.thumb_func
  170              	SysTick_Handler:
  171              	.LFB73:
- 171:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
- 172:Core/Src/stm32f1xx_it.c **** 
- 173:Core/Src/stm32f1xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
- 174:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
- 175:Core/Src/stm32f1xx_it.c **** 
- 176:Core/Src/stm32f1xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
- 177:Core/Src/stm32f1xx_it.c **** }
- 178:Core/Src/stm32f1xx_it.c **** 
- 179:Core/Src/stm32f1xx_it.c **** /**
- 180:Core/Src/stm32f1xx_it.c ****   * @brief This function handles System tick timer.
- 181:Core/Src/stm32f1xx_it.c ****   */
- 182:Core/Src/stm32f1xx_it.c **** void SysTick_Handler(void)
- 183:Core/Src/stm32f1xx_it.c **** {
- 172              		.loc 1 183 0
+ 172:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 0 */
+ 173:Core/Src/stm32f1xx_it.c **** 
+ 174:Core/Src/stm32f1xx_it.c ****   /* USER CODE END PendSV_IRQn 0 */
+ 175:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN PendSV_IRQn 1 */
+ 176:Core/Src/stm32f1xx_it.c **** 
+ 177:Core/Src/stm32f1xx_it.c ****   /* USER CODE END PendSV_IRQn 1 */
+ 178:Core/Src/stm32f1xx_it.c **** }
+ 179:Core/Src/stm32f1xx_it.c **** 
+ 180:Core/Src/stm32f1xx_it.c **** /**
+ 181:Core/Src/stm32f1xx_it.c ****   * @brief This function handles System tick timer.
+ 182:Core/Src/stm32f1xx_it.c ****   */
+ 183:Core/Src/stm32f1xx_it.c **** void SysTick_Handler(void)
+ 184:Core/Src/stm32f1xx_it.c **** {
+ 172              		.loc 1 184 0
  173              		.cfi_startproc
  174              		@ args = 0, pretend = 0, frame = 0
  175              		@ frame_needed = 0, uses_anonymous_args = 0
- 176              		.loc 1 183 0
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 7
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 7
 
 
+ 176              		.loc 1 184 0
  177 0000 08B5     		push	{r3, lr}
  178              	.LCFI0:
  179              		.cfi_def_cfa_offset 8
  180              		.cfi_offset 3, -8
  181              		.cfi_offset 14, -4
- 184:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
- 185:Core/Src/stm32f1xx_it.c **** 
- 186:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
- 187:Core/Src/stm32f1xx_it.c ****   HAL_IncTick();
- 182              		.loc 1 187 0
+ 185:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
+ 186:Core/Src/stm32f1xx_it.c **** 
+ 187:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
+ 188:Core/Src/stm32f1xx_it.c ****   HAL_IncTick();
+ 182              		.loc 1 188 0
  183 0002 FFF7FEFF 		bl	HAL_IncTick
  184              	.LVL0:
  185 0006 08BD     		pop	{r3, pc}
  186              		.cfi_endproc
  187              	.LFE73:
- 189              		.text
- 190              	.Letext0:
- 191              		.file 2 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\machine\\_default_types.h"
- 192              		.file 3 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\sys\\_stdint.h"
- 193              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
- 194              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s 			page 8
+ 189              		.section	.text.RTC_IRQHandler,"ax",%progbits
+ 190              		.align	2
+ 191              		.global	RTC_IRQHandler
+ 192              		.thumb
+ 193              		.thumb_func
+ 195              	RTC_IRQHandler:
+ 196              	.LFB74:
+ 189:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
+ 190:Core/Src/stm32f1xx_it.c **** 
+ 191:Core/Src/stm32f1xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
+ 192:Core/Src/stm32f1xx_it.c **** }
+ 193:Core/Src/stm32f1xx_it.c **** 
+ 194:Core/Src/stm32f1xx_it.c **** /******************************************************************************/
+ 195:Core/Src/stm32f1xx_it.c **** /* STM32F1xx Peripheral Interrupt Handlers                                    */
+ 196:Core/Src/stm32f1xx_it.c **** /* Add here the Interrupt Handlers for the used peripherals.                  */
+ 197:Core/Src/stm32f1xx_it.c **** /* For the available peripheral interrupt handler names,                      */
+ 198:Core/Src/stm32f1xx_it.c **** /* please refer to the startup file (startup_stm32f1xx.s).                    */
+ 199:Core/Src/stm32f1xx_it.c **** /******************************************************************************/
+ 200:Core/Src/stm32f1xx_it.c **** 
+ 201:Core/Src/stm32f1xx_it.c **** /**
+ 202:Core/Src/stm32f1xx_it.c ****   * @brief This function handles RTC global interrupt.
+ 203:Core/Src/stm32f1xx_it.c ****   */
+ 204:Core/Src/stm32f1xx_it.c **** void RTC_IRQHandler(void)
+ 205:Core/Src/stm32f1xx_it.c **** {
+ 197              		.loc 1 205 0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201 0000 08B5     		push	{r3, lr}
+ 202              	.LCFI1:
+ 203              		.cfi_def_cfa_offset 8
+ 204              		.cfi_offset 3, -8
+ 205              		.cfi_offset 14, -4
+ 206:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN RTC_IRQn 0 */
+ 207:Core/Src/stm32f1xx_it.c **** 
+ 208:Core/Src/stm32f1xx_it.c ****   /* USER CODE END RTC_IRQn 0 */
+ 209:Core/Src/stm32f1xx_it.c ****   HAL_RTCEx_RTCIRQHandler(&hrtc);
+ 206              		.loc 1 209 0
+ 207 0002 0248     		ldr	r0, .L17
+ 208 0004 FFF7FEFF 		bl	HAL_RTCEx_RTCIRQHandler
+ 209              	.LVL1:
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 8
+
+
+ 210 0008 08BD     		pop	{r3, pc}
+ 211              	.L18:
+ 212 000a 00BF     		.align	2
+ 213              	.L17:
+ 214 000c 00000000 		.word	hrtc
+ 215              		.cfi_endproc
+ 216              	.LFE74:
+ 218              		.section	.text.USB_LP_CAN1_RX0_IRQHandler,"ax",%progbits
+ 219              		.align	2
+ 220              		.global	USB_LP_CAN1_RX0_IRQHandler
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	USB_LP_CAN1_RX0_IRQHandler:
+ 225              	.LFB75:
+ 210:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN RTC_IRQn 1 */
+ 211:Core/Src/stm32f1xx_it.c **** 
+ 212:Core/Src/stm32f1xx_it.c ****   /* USER CODE END RTC_IRQn 1 */
+ 213:Core/Src/stm32f1xx_it.c **** }
+ 214:Core/Src/stm32f1xx_it.c **** 
+ 215:Core/Src/stm32f1xx_it.c **** /**
+ 216:Core/Src/stm32f1xx_it.c ****   * @brief This function handles USB low priority or CAN RX0 interrupts.
+ 217:Core/Src/stm32f1xx_it.c ****   */
+ 218:Core/Src/stm32f1xx_it.c **** void USB_LP_CAN1_RX0_IRQHandler(void)
+ 219:Core/Src/stm32f1xx_it.c **** {
+ 226              		.loc 1 219 0
+ 227              		.cfi_startproc
+ 228              		@ args = 0, pretend = 0, frame = 0
+ 229              		@ frame_needed = 0, uses_anonymous_args = 0
+ 230 0000 08B5     		push	{r3, lr}
+ 231              	.LCFI2:
+ 232              		.cfi_def_cfa_offset 8
+ 233              		.cfi_offset 3, -8
+ 234              		.cfi_offset 14, -4
+ 220:Core/Src/stm32f1xx_it.c ****   /* USER CODE BEGIN USB_LP_CAN1_RX0_IRQn 0 */
+ 221:Core/Src/stm32f1xx_it.c **** 
+ 222:Core/Src/stm32f1xx_it.c ****   /* USER CODE END USB_LP_CAN1_RX0_IRQn 0 */
+ 223:Core/Src/stm32f1xx_it.c ****   HAL_PCD_IRQHandler(&hpcd_USB_FS);
+ 235              		.loc 1 223 0
+ 236 0002 0248     		ldr	r0, .L21
+ 237 0004 FFF7FEFF 		bl	HAL_PCD_IRQHandler
+ 238              	.LVL2:
+ 239 0008 08BD     		pop	{r3, pc}
+ 240              	.L22:
+ 241 000a 00BF     		.align	2
+ 242              	.L21:
+ 243 000c 00000000 		.word	hpcd_USB_FS
+ 244              		.cfi_endproc
+ 245              	.LFE75:
+ 247              		.text
+ 248              	.Letext0:
+ 249              		.file 2 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 250              		.file 3 "d:\\devtools\\gcc-arm\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 251              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h"
+ 252              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 253              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h"
+ 254              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h"
+ 255              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 9
+
+
+ 256              		.file 9 "Drivers/CMSIS/Include/core_cm3.h"
+ 257              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 258              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h"
+ARM GAS  C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_it.c
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:20     .text.NMI_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:25     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:38     .text.HardFault_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:43     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:57     .text.MemManage_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:62     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:76     .text.BusFault_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:81     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:95     .text.UsageFault_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:100    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:114    .text.SVC_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:119    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:131    .text.DebugMon_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:136    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:148    .text.PendSV_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:153    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:165    .text.SysTick_Handler:00000000 $t
-C:\Users\ADMINI~1\AppData\Local\Temp\ccQrR9Cx.s:170    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:20     .text.NMI_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:25     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:38     .text.HardFault_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:43     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:57     .text.MemManage_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:62     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:76     .text.BusFault_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:81     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:95     .text.UsageFault_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:100    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:114    .text.SVC_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:119    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:131    .text.DebugMon_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:136    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:148    .text.PendSV_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:153    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:165    .text.SysTick_Handler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:170    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:190    .text.RTC_IRQHandler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:195    .text.RTC_IRQHandler:00000000 RTC_IRQHandler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:214    .text.RTC_IRQHandler:0000000c $d
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:219    .text.USB_LP_CAN1_RX0_IRQHandler:00000000 $t
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:224    .text.USB_LP_CAN1_RX0_IRQHandler:00000000 USB_LP_CAN1_RX0_IRQHandler
+C:\Users\ADMINI~1\AppData\Local\Temp\cc2fzCjr.s:243    .text.USB_LP_CAN1_RX0_IRQHandler:0000000c $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
+HAL_RTCEx_RTCIRQHandler
+hrtc
+HAL_PCD_IRQHandler
+hpcd_USB_FS
