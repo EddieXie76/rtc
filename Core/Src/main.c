@@ -151,11 +151,11 @@ int main(void)
 
   tm1637_Init(&tm1637);
 
-  char str[16] = {0};
+  char str[64] = {0};
 
   GPIO_PinState tim3_sw_last_state = HAL_GPIO_ReadPin(TIM3_SW_GPIO_Port, TIM3_SW_Pin);
 
-  int16_t enc_cnt_last = htim3.Instance->CNT;
+  int16_t diff_last = 0;
 
   // USBD_CDC_Init();
   /* USER CODE END 2 */
@@ -172,7 +172,7 @@ int main(void)
       if (tim3_sw == GPIO_PIN_SET)
       {
         htim3.Instance->CNT = 0;
-        enc_cnt_last = htim3.Instance->CNT;
+        diff_last = htim3.Instance->CNT;
         rtc_mode++;
         rtc_mode %= CNT_RTC_MODE;
         sprintf(str, "rtc_mode = %d\r\n", rtc_mode);
@@ -184,32 +184,30 @@ int main(void)
     HAL_RTC_GetDate(&hrtc, &date, RTC_FORMAT_BIN);
     HAL_RTC_GetTime(&hrtc, &time, RTC_FORMAT_BIN);
 
-    if (HAL_GetTick() % 100 == 0) {
-     
-    }
-
-    if (htim3.Instance->CNT != enc_cnt_last) {
-      sprintf(str, "TIM3 CNT = %d\r\n", (int16_t) htim3.Instance->CNT);
+    int16_t diff = htim3.Instance->CNT;
+    diff /= 4;
+    if (diff != diff_last) {
+      sprintf(str, "CNT = %d, DIFF= %d\r\n", htim3.Instance->CNT, diff);
       CDC_Transmit_FS(str, strlen(str));
       switch (rtc_mode)
       {
       case MODIFY_SECOND:
-        time.Seconds = (time.Seconds + ((uint16_t)htim3.Instance->CNT)) % 60;
+        time.Seconds = (time.Seconds + 60 + diff) % 60;
         break;
       case MODIFY_MINUTE:
-        time.Minutes = (time.Minutes + ((uint16_t)htim3.Instance->CNT)) % 60;
+        time.Minutes = (time.Minutes + 60 + diff) % 60;
         break;
       case MODIFY_HOUR:
-        time.Hours = (time.Hours + ((uint16_t)htim3.Instance->CNT)) % 24;
+        time.Hours = (time.Hours + 24 + diff) % 24;
         break;
       case MODIFY_DATE:
-        date.Date = (date.Date + ((uint16_t)htim3.Instance->CNT)) % 60;
+        date.Date = (date.Date + 31 + diff) % 31;
         break;
       case MODIFY_MONTH:
-        date.Month = (date.Month + ((uint16_t)htim3.Instance->CNT)) % 60;
+        date.Month = (date.Month + 12 + diff) % 12;
         break;
       case MODIFY_YEAR:
-        date.Year = (date.Year + ((uint16_t)htim3.Instance->CNT)) % 60;
+        date.Year = (date.Year + 100 + diff) % 100;
         break;
       default:
         break;
@@ -217,7 +215,7 @@ int main(void)
       htim3.Instance->CNT = 0;
       HAL_RTC_SetDate(&hrtc, &date, RTC_FORMAT_BIN);
       HAL_RTC_SetTime(&hrtc, &time, RTC_FORMAT_BIN);
-      enc_cnt_last = htim3.Instance->CNT;
+      diff_last = htim3.Instance->CNT;
     }
     
     UpdateDisplay(rtc_mode, date, time);
