@@ -34,7 +34,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-enum RTC_MODE {
+enum MODE {
   DISP_TIME = 0,
   DISP_DATE,
   MODIFY_SECOND,
@@ -43,8 +43,9 @@ enum RTC_MODE {
   MODIFY_DATE,
   MODIFY_MONTH,
   MODIFY_YEAR,
-  CNT_RTC_MODE,
   DISP_ADC1,
+  //INSERT BEFORE
+  CNT_RTC_MODE,
 };
 /* USER CODE END PTD */
 
@@ -54,63 +55,25 @@ enum RTC_MODE {
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
+#define ADC_ARRAY_SIZE 128
 
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t rtc_mode = 0;
+uint8_t mode = 0;
 TM1637_InstDef tm1637 = {GPIOA, GPIO_PIN_6, GPIO_PIN_7, 6};
 char buffer[64] = {0};
+uint32_t adc1_array[ADC_ARRAY_SIZE] = {0};
+uint8_t adc1_index = 0;
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-/* USER CODE BEGIN PFP */
-void UpdateDisplay(uint8_t rtc_mode, RTC_DateTypeDef date, RTC_TimeTypeDef time){
-     int blink = (HAL_GetTick() / 200) % 2 > 0 ? 0xFF : 0;
-    char raw[6] = {0};
-    switch (rtc_mode)
-    {
-    case DISP_TIME:
-    case MODIFY_SECOND:
-    case MODIFY_MINUTE:
-    case MODIFY_HOUR:
-      raw[0] = rtc_mode != MODIFY_SECOND ? segmentMap[time.Seconds%10] : segmentMap[time.Seconds%10] & blink;
-      raw[1] = rtc_mode != MODIFY_SECOND ? segmentMap[time.Seconds/10] : segmentMap[time.Seconds/10] & blink;
-      raw[2] = rtc_mode != MODIFY_MINUTE ? segmentMap[time.Minutes%10] | (1<<7) : segmentMap[time.Minutes%10] & blink | (1<<7);
-      raw[3] = rtc_mode != MODIFY_MINUTE ? segmentMap[time.Minutes/10] : segmentMap[time.Minutes/10] & blink;
-      raw[4] = rtc_mode != MODIFY_HOUR ? segmentMap[time.Hours%10] | (1<<7) : segmentMap[time.Hours%10] & blink | (1<<7);
-      raw[5] = rtc_mode != MODIFY_HOUR ? segmentMap[time.Hours/10] : segmentMap[time.Hours/10] & blink;
-      break;
-    case DISP_DATE:
-    case MODIFY_DATE:
-    case MODIFY_MONTH:
-    case MODIFY_YEAR:
-      raw[0] = rtc_mode != MODIFY_DATE ? segmentMap[date.Date%10] : segmentMap[date.Date%10] & blink;
-      raw[1] = rtc_mode != MODIFY_DATE ? segmentMap[date.Date/10] : segmentMap[date.Date/10] & blink;
-      raw[2] = rtc_mode != MODIFY_MONTH ? segmentMap[date.Month%10] | (1<<7) : segmentMap[date.Month%10] & blink | (1<<7);
-      raw[3] = rtc_mode != MODIFY_MONTH ? segmentMap[date.Month/10] : segmentMap[date.Month/10] & blink;
-      raw[4] = rtc_mode != MODIFY_YEAR ? segmentMap[date.Year%10] : segmentMap[date.Year%10] & blink | (1<<7);
-      raw[5] = rtc_mode != MODIFY_YEAR ? segmentMap[date.Year/10] : segmentMap[date.Year/10] & blink;
-      break;
-    case DISP_ADC1:
-      uint32_t value = ConvertADC(&hadc1);
-      raw[0] = value % 10;
-      raw[1] = value / 10 % 10;
-      raw[2] = value / 100  % 10;
-      raw[3] = value / 1000  % 10;
-      raw[4] = value / 10000  % 10;
-      raw[5] = value / 100000  % 10;
-      break;
-    default:
-      break;
-    }
-    tm1637_DisplayRaw(&tm1637, raw, sizeof(raw));
-}
 
+/* USER CODE BEGIN PFP */
 uint32_t ConvertADC(ADC_HandleTypeDef* hadc) {
   HAL_ADC_Start(hadc);
   HAL_ADC_PollForConversion(hadc, 0xffff);
@@ -118,6 +81,56 @@ uint32_t ConvertADC(ADC_HandleTypeDef* hadc) {
   HAL_ADC_Stop(hadc);
   return value;
 }
+
+void UpdateDisplay(uint8_t mode, RTC_DateTypeDef date, RTC_TimeTypeDef time){
+  int blink = (HAL_GetTick() / 200) % 2 > 0 ? 0xFF : 0;
+  char raw[6] = {0};
+  adc1_index %= ADC_ARRAY_SIZE;
+  adc1_array[adc1_index++] = ConvertADC(&hadc1);
+  uint32_t adc1_avg = 0;
+  for (uint8_t i = 0;i<ADC_ARRAY_SIZE;i++){
+      adc1_avg += adc1_array[i];
+  }
+  adc1_avg /= ADC_ARRAY_SIZE;
+
+  switch (mode)
+  {
+  case DISP_TIME:
+  case MODIFY_SECOND:
+  case MODIFY_MINUTE:
+  case MODIFY_HOUR:
+    raw[0] = mode != MODIFY_SECOND ? segmentMap[time.Seconds%10] : segmentMap[time.Seconds%10] & blink;
+    raw[1] = mode != MODIFY_SECOND ? segmentMap[time.Seconds/10] : segmentMap[time.Seconds/10] & blink;
+    raw[2] = mode != MODIFY_MINUTE ? segmentMap[time.Minutes%10] | (1<<7) : segmentMap[time.Minutes%10] & blink | (1<<7);
+    raw[3] = mode != MODIFY_MINUTE ? segmentMap[time.Minutes/10] : segmentMap[time.Minutes/10] & blink;
+    raw[4] = mode != MODIFY_HOUR ? segmentMap[time.Hours%10] | (1<<7) : segmentMap[time.Hours%10] & blink | (1<<7);
+    raw[5] = mode != MODIFY_HOUR ? segmentMap[time.Hours/10] : segmentMap[time.Hours/10] & blink;
+    break;
+  case DISP_DATE:
+  case MODIFY_DATE:
+  case MODIFY_MONTH:
+  case MODIFY_YEAR:
+    raw[0] = mode != MODIFY_DATE ? segmentMap[date.Date%10] : segmentMap[date.Date%10] & blink;
+    raw[1] = mode != MODIFY_DATE ? segmentMap[date.Date/10] : segmentMap[date.Date/10] & blink;
+    raw[2] = mode != MODIFY_MONTH ? segmentMap[date.Month%10] | (1<<7) : segmentMap[date.Month%10] & blink | (1<<7);
+    raw[3] = mode != MODIFY_MONTH ? segmentMap[date.Month/10] : segmentMap[date.Month/10] & blink;
+    raw[4] = mode != MODIFY_YEAR ? segmentMap[date.Year%10] : segmentMap[date.Year%10] & blink | (1<<7);
+    raw[5] = mode != MODIFY_YEAR ? segmentMap[date.Year/10] : segmentMap[date.Year/10] & blink;
+    break;
+  case DISP_ADC1:
+    raw[0] = segmentMap[adc1_avg % 10];
+    raw[1] = segmentMap[adc1_avg / 10 % 10];
+    raw[2] = segmentMap[adc1_avg / 100  % 10];
+    raw[3] = segmentMap[adc1_avg / 1000  % 10];
+    raw[4] = segmentMap[adc1_avg / 10000  % 10];
+    raw[5] = segmentMap[adc1_avg / 100000  % 10];
+    break;
+  default:
+    break;
+  }
+  tm1637_DisplayRaw(&tm1637, raw, sizeof(raw));
+}
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -196,9 +209,9 @@ int main(void)
       {
         htim3.Instance->CNT = 0;
         diff_last = htim3.Instance->CNT;
-        rtc_mode++;
-        rtc_mode %= CNT_RTC_MODE;
-        sprintf(buffer, "rtc_mode = %d\r\n", rtc_mode);
+        mode++;
+        mode %= CNT_RTC_MODE;
+        sprintf(buffer, "mode = %d\r\n", mode);
         CDC_Transmit_FS(buffer, strlen(buffer));
       }
       tim3_sw_last_state = tim3_sw;
@@ -212,7 +225,7 @@ int main(void)
     if (diff != diff_last) {
       sprintf(buffer, "CNT = %d, DIFF= %d\r\n", htim3.Instance->CNT, diff);
       CDC_Transmit_FS(buffer, strlen(buffer));
-      switch (rtc_mode)
+      switch (mode)
       {
       case MODIFY_SECOND:
         time.Seconds = (time.Seconds + 60 + diff) % 60;
@@ -241,10 +254,7 @@ int main(void)
       diff_last = htim3.Instance->CNT;
     }
     
-    // UpdateDisplay(rtc_mode, date, time);
-
-    ConvertADC();
-   
+    UpdateDisplay(mode, date, time);
   }
   /* USER CODE END 3 */
 }
