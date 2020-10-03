@@ -22,7 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 void RTC_First_Init(RTC_HandleTypeDef* hrtc) {
-  if (HAL_RTCEx_BKUPRead(hrtc, RTC_BKP_DR1)==FIRST_INIT)
+  if (HAL_RTCEx_BKUPRead(hrtc, RTC_BKP_DR1)!=FIRST_INIT)
   {
     RTC_TimeTypeDef time = {0};
     RTC_DateTypeDef date = {0};
