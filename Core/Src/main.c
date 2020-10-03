@@ -43,7 +43,8 @@ enum RTC_MODE {
   MODIFY_DATE,
   MODIFY_MONTH,
   MODIFY_YEAR,
-  CNT_RTC_MODE
+  CNT_RTC_MODE,
+  DISP_ADC1,
 };
 /* USER CODE END PTD */
 
@@ -95,16 +96,27 @@ void UpdateDisplay(uint8_t rtc_mode, RTC_DateTypeDef date, RTC_TimeTypeDef time)
       raw[4] = rtc_mode != MODIFY_YEAR ? segmentMap[date.Year%10] : segmentMap[date.Year%10] & blink | (1<<7);
       raw[5] = rtc_mode != MODIFY_YEAR ? segmentMap[date.Year/10] : segmentMap[date.Year/10] & blink;
       break;
+    case DISP_ADC1:
+      uint32_t value = ConvertADC(&hadc1);
+      raw[0] = value % 10;
+      raw[1] = value / 10 % 10;
+      raw[2] = value / 100  % 10;
+      raw[3] = value / 1000  % 10;
+      raw[4] = value / 10000  % 10;
+      raw[5] = value / 100000  % 10;
+      break;
     default:
       break;
     }
     tm1637_DisplayRaw(&tm1637, raw, sizeof(raw));
 }
 
-void ConvertADC() {
-  int32_t adc1_value = HAL_ADC_GetValue(&hadc1);
-  sprintf(buffer, "adc1_value = %d\r\n", adc1_value);
-  CDC_Transmit_FS(buffer, strlen(buffer));
+uint32_t ConvertADC(ADC_HandleTypeDef* hadc) {
+  HAL_ADC_Start(hadc);
+  HAL_ADC_PollForConversion(hadc, 0xffff);
+  uint32_t value = HAL_ADC_GetValue(hadc);
+  HAL_ADC_Stop(hadc);
+  return value;
 }
 /* USER CODE END PFP */
 
@@ -229,7 +241,7 @@ int main(void)
       diff_last = htim3.Instance->CNT;
     }
     
-    UpdateDisplay(rtc_mode, date, time);
+    // UpdateDisplay(rtc_mode, date, time);
 
     ConvertADC();
    
