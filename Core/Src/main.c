@@ -61,6 +61,7 @@ enum RTC_MODE {
 /* USER CODE BEGIN PV */
 uint8_t rtc_mode = 0;
 TM1637_InstDef tm1637 = {GPIOA, GPIO_PIN_6, GPIO_PIN_7, 6};
+char buffer[64] = {0};
 
 /* USER CODE END PV */
 
@@ -98,6 +99,12 @@ void UpdateDisplay(uint8_t rtc_mode, RTC_DateTypeDef date, RTC_TimeTypeDef time)
       break;
     }
     tm1637_DisplayRaw(&tm1637, raw, sizeof(raw));
+}
+
+void ConvertADC() {
+  int32_t adc1_value = HAL_ADC_GetValue(&hadc1);
+  sprintf(buffer, "adc1_value = %d\r\n", adc1_value);
+  CDC_Transmit_FS(buffer, strlen(buffer));
 }
 /* USER CODE END PFP */
 
@@ -151,13 +158,13 @@ int main(void)
 
   tm1637_Init(&tm1637);
 
-  char str[64] = {0};
-
   GPIO_PinState tim3_sw_last_state = HAL_GPIO_ReadPin(TIM3_SW_GPIO_Port, TIM3_SW_Pin);
 
   int16_t diff_last = 0;
 
-  // USBD_CDC_Init();
+  HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(YELLOW_GPIO_Port, YELLOW_Pin, GPIO_PIN_RESET);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -167,6 +174,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    uint32_t tick = HAL_GetTick();
+    HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, tick / 100 % 2);
+    HAL_GPIO_WritePin(YELLOW_GPIO_Port, YELLOW_Pin, !(tick / 100 % 2));
+
     GPIO_PinState tim3_sw = HAL_GPIO_ReadPin(TIM3_SW_GPIO_Port, TIM3_SW_Pin);
     if (tim3_sw != tim3_sw_last_state) {
       if (tim3_sw == GPIO_PIN_SET)
@@ -175,8 +186,8 @@ int main(void)
         diff_last = htim3.Instance->CNT;
         rtc_mode++;
         rtc_mode %= CNT_RTC_MODE;
-        sprintf(str, "rtc_mode = %d\r\n", rtc_mode);
-        CDC_Transmit_FS(str, strlen(str));
+        sprintf(buffer, "rtc_mode = %d\r\n", rtc_mode);
+        CDC_Transmit_FS(buffer, strlen(buffer));
       }
       tim3_sw_last_state = tim3_sw;
     }
@@ -187,8 +198,8 @@ int main(void)
     int16_t diff = htim3.Instance->CNT;
     diff /= 4;
     if (diff != diff_last) {
-      sprintf(str, "CNT = %d, DIFF= %d\r\n", htim3.Instance->CNT, diff);
-      CDC_Transmit_FS(str, strlen(str));
+      sprintf(buffer, "CNT = %d, DIFF= %d\r\n", htim3.Instance->CNT, diff);
+      CDC_Transmit_FS(buffer, strlen(buffer));
       switch (rtc_mode)
       {
       case MODIFY_SECOND:
@@ -219,6 +230,9 @@ int main(void)
     }
     
     UpdateDisplay(rtc_mode, date, time);
+
+    ConvertADC();
+   
   }
   /* USER CODE END 3 */
 }
@@ -264,7 +278,7 @@ void SystemClock_Config(void)
   PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_RTC|RCC_PERIPHCLK_ADC
                               |RCC_PERIPHCLK_USB;
   PeriphClkInit.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
-  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV6;
+  PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV8;
   PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_PLL_DIV1_5;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {

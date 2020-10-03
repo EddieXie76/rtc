@@ -78,6 +78,10 @@ void Error_Handler(void);
 #define TIM3_SW_GPIO_Port GPIOC
 #define TIM5_SW_Pin GPIO_PIN_9
 #define TIM5_SW_GPIO_Port GPIOA
+#define RED_Pin GPIO_PIN_10
+#define RED_GPIO_Port GPIOC
+#define YELLOW_Pin GPIO_PIN_11
+#define YELLOW_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
